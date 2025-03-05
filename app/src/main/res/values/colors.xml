@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="top_bar_background">#D9A11F</color>
+    <color name="recipe_button">#F2D894</color>
 </resources>
