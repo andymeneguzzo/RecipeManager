@@ -23,6 +23,7 @@ class GreetingsActivity : AppCompatActivity() {
 
         fabHome.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }
