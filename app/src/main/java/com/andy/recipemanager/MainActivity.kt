@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val topBar = findViewById<LinearLayout>(R.id.clickableTopBar)
         topBar.setOnClickListener {
             startActivity(Intent(this, GreetingsActivity::class.java))
+            finish()
         }
     }
 }
