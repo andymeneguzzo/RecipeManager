@@ -3,8 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="top_bottom_bar_background">#D9A11F</color>
-    <color name="buttons">#D9A11F</color>
-    <color name="search_bar_underline">#D9A11F</color>
-    <color name="recipies">#F0BF4D</color>
+    <color name="top_bottom_bar_background">#FFB91D</color>
+    <color name="buttons">#FFB91D</color>
+    <color name="search_bar_underline">#FFB91D</color>
+    <color name="recipies">#FFC958</color>
 </resources>
