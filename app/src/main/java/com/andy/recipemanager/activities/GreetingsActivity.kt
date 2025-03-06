@@ -1,14 +1,15 @@
-package com.andy.recipemanager
+package com.andy.recipemanager.activities
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import com.andy.recipemanager.activities.MainActivity
+import com.andy.recipemanager.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class GreetingsActivity : AppCompatActivity() {
 
