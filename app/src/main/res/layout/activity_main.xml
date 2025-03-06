@@ -39,7 +39,7 @@
             android:backgroundTint="@color/top_bottom_bar_background"
             android:contentDescription="@string/menu"
             android:src="@drawable/ic_menu_hamburger"
-            android:tint="@color/white"
+            android:tintMode="@color/white"
             app:maxImageSize="32dp"
             app:elevation="0dp" />
     </LinearLayout>
@@ -78,6 +78,7 @@
             android:backgroundTint="@color/top_bottom_bar_background"
             app:elevation="0dp"
             app:maxImageSize="32dp"
+            android:tintMode="@color/white"
             android:contentDescription="@string/profile"
             android:src="@drawable/ic_user" />
 
@@ -92,7 +93,8 @@
             android:layout_marginRight="32dp"
             android:backgroundTint="@color/top_bottom_bar_background"
             app:elevation="0dp"
-            app:maxImageSize="32dp"/>
+            app:maxImageSize="65dp"
+            android:tintMode="@color/white"/>
 
         <!-- ICONA SETTINGS -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -103,6 +105,7 @@
             android:contentDescription="@string/settings"
             android:backgroundTint="@color/top_bottom_bar_background"
             app:elevation="0dp"
-            app:maxImageSize="32dp"/>
+            app:maxImageSize="32dp"
+            android:tintMode="@color/white"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
