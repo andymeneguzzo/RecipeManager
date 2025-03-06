@@ -1,12 +1,14 @@
 package com.andy.recipemanager
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.core.net.toUri
 
 class GreetingsActivity : AppCompatActivity() {
 
@@ -29,6 +31,10 @@ class GreetingsActivity : AppCompatActivity() {
             finish()
         }
 
-
+        imgButtonGithub.setOnClickListener {
+            val githubUrl = "https://github.com/andymeneguzzo"
+            val intent = Intent(Intent.ACTION_VIEW, githubUrl.toUri())
+            startActivity(intent)
+        }
     }
 }
