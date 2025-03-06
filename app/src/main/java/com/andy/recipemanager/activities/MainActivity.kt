@@ -8,7 +8,11 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.andy.recipemanager.R
+import com.andy.recipemanager.adapters.RecipeAdapter
+import com.andy.recipemanager.data.Recipe
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
@@ -25,6 +29,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // ADAPTER TEST
+
+        // Reference RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.recipeList)
+
+        // Chose LayoutManager
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Provide some data
+        val sampleRecipes = listOf(
+            Recipe("Rigatoni alla Carbonara", "15 min", "Easy"),
+            Recipe("Arrosto e Patate", "2 hrs", "Medium"),
+            Recipe("Pizza Margherita", "30 min", "Easy")
+        )
+
+        // Create Adapter
+        val adapter = RecipeAdapter(sampleRecipes)
+        recyclerView.adapter = adapter
+
+
 
         // BUTTONS
         hamburgerButton = findViewById(R.id.hamburgerButton)
