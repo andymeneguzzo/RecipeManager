@@ -38,7 +38,7 @@
             android:fontFamily="@font/bagel_fat_one"
             android:text="Recipe name"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btnMore"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
@@ -53,7 +53,7 @@
             android:fontFamily="@font/baloo_chettan"
             android:text="Time"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
             app:layout_constraintTop_toBottomOf="@id/tvRecipeName" />
 
@@ -66,7 +66,7 @@
             android:fontFamily="@font/baloo_chettan"
             android:text="Difficulty"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
             app:layout_constraintTop_toBottomOf="@id/tvRecipeTime" />
 
