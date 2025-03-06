@@ -4,5 +4,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="top_bottom_bar_background">#D9A11F</color>
-    <color name="recipe_button">#F2D894</color>
+    <color name="buttons">#D9A11F</color>
 </resources>
