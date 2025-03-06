@@ -8,41 +8,47 @@
     tools:context=".MainActivity">
 
     <!-- BARRA IN ALTO CON TITOLO E HAMBURGER ALTO A DESTRA -->
-    <LinearLayout
-        android:id="@+id/topBar"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/topBarCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_bar_background"
-        android:orientation="horizontal"
-        android:padding="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/top_bottom_bar_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp">
 
-        <!-- TITOLO A SINISTRA -->
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Recipe Manager"
-            android:textColor="@color/white"
-            android:textSize="32dp"
-            android:textStyle="bold"/>
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-        <!-- ICONA HAMBURGER -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/hamburgerButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:backgroundTint="@color/top_bottom_bar_background"
-            android:contentDescription="@string/menu"
-            android:src="@drawable/ic_menu_hamburger"
-            android:tintMode="@color/white"
-            app:maxImageSize="32dp"
-            app:elevation="0dp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Recipe Manager"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/hamburgerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/top_bottom_bar_background"
+                android:contentDescription="@string/menu"
+                android:src="@drawable/ic_menu_hamburger"
+                app:tint="@color/white"
+                app:maxImageSize="32dp"
+                app:elevation="0dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- RECYCLERVIEW PER LA LISTA DI RICETTE -->
     <androidx.recyclerview.widget.RecyclerView
@@ -52,60 +58,65 @@
         android:padding="16dp"
         android:clipToPadding="false"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/topBar"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintTop_toBottomOf="@+id/topBarCard"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBarCard"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <!-- BARRA BASSA CON ICONE UTENTE, AGGIUNGI, IMPOSTAZIONI -->
-    <LinearLayout
-        android:id="@+id/bottomBar"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomBarCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_bar_background"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="5dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/top_bottom_bar_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp">
 
-        <!-- ICONA UTENTE -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/userButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/top_bottom_bar_background"
-            app:elevation="0dp"
-            app:maxImageSize="32dp"
-            android:tintMode="@color/white"
-            android:contentDescription="@string/profile"
-            android:src="@drawable/ic_user" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
-        <!-- ICONA + IN CENTRO-->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_add"
-            android:contentDescription="@string/add_recipe"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:backgroundTint="@color/top_bottom_bar_background"
-            app:elevation="0dp"
-            app:maxImageSize="65dp"
-            android:tintMode="@color/white"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/userButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/top_bottom_bar_background"
+                android:contentDescription="@string/profile"
+                android:src="@drawable/ic_user"
+                app:tint="@color/white"
+                app:maxImageSize="32dp"
+                app:elevation="0dp" />
 
-        <!-- ICONA SETTINGS -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_settings"
-            android:contentDescription="@string/settings"
-            android:backgroundTint="@color/top_bottom_bar_background"
-            app:elevation="0dp"
-            app:maxImageSize="32dp"
-            android:tintMode="@color/white"/>
-    </LinearLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"
+                android:contentDescription="@string/add_recipe"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:backgroundTint="@color/top_bottom_bar_background"
+                app:tint="@color/white"
+                app:maxImageSize="65dp"
+                app:elevation="0dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:contentDescription="@string/settings"
+                android:backgroundTint="@color/top_bottom_bar_background"
+                app:tint="@color/white"
+                app:maxImageSize="32dp"
+                app:elevation="0dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

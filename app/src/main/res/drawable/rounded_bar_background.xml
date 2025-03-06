@@ -7,9 +7,4 @@
 
     <!-- ANGOLI ARROTONDATI -->
     <corners android:radius="10dp"/>
-
-    <!-- BORDI OPZIONALE -->
-    <stroke
-        android:width="0dp"
-        android:color="@color/top_bottom_bar_background"/>
 </shape>
