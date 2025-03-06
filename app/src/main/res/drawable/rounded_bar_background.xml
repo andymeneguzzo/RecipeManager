@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- COLORE SFONDO -->
+    <solid android:color="@color/top_bar_background"/>
+
+    <!-- ANGOLI ARROTONDATI -->
+    <corners android:radius="10dp"/>
+
+    <!-- BORDI OPZIONALE -->
+    <stroke
+        android:width="0dp"
+        android:color="@color/top_bar_background"/>
+</shape>
