@@ -34,38 +34,41 @@
             android:id="@+id/tvRecipeName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/bagel_fat_one"
             android:text="Recipe name"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnMore"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
-            app:layout_constraintTop_toTopOf="@id/ivRecipeImage"
-            app:layout_constraintEnd_toStartOf="@+id/btnMore"/>
+            app:layout_constraintTop_toTopOf="@id/ivRecipeImage" />
 
         <!-- RECIPE TIME -->
         <TextView
             android:id="@+id/tvRecipeTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time"
-            android:textSize="12sp"
-            android:textColor="@color/white"
             android:layout_marginStart="8dp"
+            android:fontFamily="@font/baloo_chettan"
+            android:text="Time"
+            android:textColor="@color/white"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
-            app:layout_constraintTop_toBottomOf="@id/tvRecipeName"/>
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeName" />
 
         <!-- RECIPE DIFFICULTY -->
         <TextView
             android:id="@+id/tvRecipeDifficulty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Difficulty"
-            android:textSize="12sp"
-            android:textColor="@color/white"
             android:layout_marginStart="8dp"
+            android:fontFamily="@font/baloo_chettan"
+            android:text="Difficulty"
+            android:textColor="@color/white"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
-            app:layout_constraintTop_toBottomOf="@id/tvRecipeTime"/>
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeTime" />
 
         <!-- MORE BUTTON -->
         <ImageButton
