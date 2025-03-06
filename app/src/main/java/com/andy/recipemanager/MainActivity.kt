@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var hamburgerButton: Button
-    private lateinit var userButton: Button
-    private lateinit var addButton: Button
-    private lateinit var settingsButton: Button
+    private lateinit var hamburgerButton: FloatingActionButton
+    private lateinit var userButton: FloatingActionButton
+    private lateinit var addButton: FloatingActionButton
+    private lateinit var settingsButton: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
