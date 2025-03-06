@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.core.view.isGone
 
+/**
+ *
+ * TODO: implement Recipe.kt, Adapter and RecyclerView for visualization of recipies in RecyclerView
+ * */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var hamburgerButton: FloatingActionButton
