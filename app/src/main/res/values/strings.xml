@@ -7,4 +7,7 @@
     <string name="home">Home</string>
     <string name="greetings1">Grazie di aver usato Recipe Manager</string>
     <string name="greetings2">Buon Appetito 😋</string>
+    <string name="recipe_image">Recipe Image</string>
+    <string name="more_options">More</string>
+    <string name="search">Search</string>
 </resources>
