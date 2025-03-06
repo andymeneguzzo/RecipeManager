@@ -105,6 +105,4 @@
             app:elevation="0dp"
             app:maxImageSize="32dp"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
