@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  *
- * TODO: implement Recipe.kt, Adapter and RecyclerView for visualization of recipies in RecyclerView
+ * TODO: implement Recipe.kt, Adapter and RecyclerView for visualization of recipies in RecyclerView!!!
  * */
 class MainActivity : AppCompatActivity() {
 
