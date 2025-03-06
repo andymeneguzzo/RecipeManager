@@ -20,6 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/greetings1"
+            android:textSize="20sp"
+            android:textStyle="normal"
             android:fontFamily="@font/bagel_fat_one"/>
 
         <TextView
@@ -27,7 +29,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/greetings2"
-            android:fontFamily="@font/bagel_fat_one"/>
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:fontFamily="@font/bagel_fat_one"
+            android:layout_marginBottom="32dp"/>
+
+        <ImageButton
+            android:id="@+id/img_button_github"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_github"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"/>
     </LinearLayout>
 
     <!-- FLOATING ACTION BUTTON -> HOME-->
