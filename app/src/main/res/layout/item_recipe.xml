@@ -2,6 +2,8 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingConstraints"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -41,8 +43,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btnMore"
-            app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
-            app:layout_constraintTop_toTopOf="@id/ivRecipeImage" />
+            app:layout_constraintStart_toEndOf="@id/ivRecipeImage" />
 
         <!-- RECIPE TIME -->
         <TextView
@@ -82,6 +83,6 @@
             android:scaleType="centerInside"
             android:adjustViewBounds="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toEndOf="@id/tvRecipeName"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

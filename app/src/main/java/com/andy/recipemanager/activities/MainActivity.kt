@@ -17,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  *
- * TODO: implement Recipe.kt, Adapter and RecyclerView for visualization of recipies in RecyclerView!!!
+ * TODO: animazione searchBar
  * */
 class MainActivity : AppCompatActivity() {
 
@@ -65,10 +65,21 @@ class MainActivity : AppCompatActivity() {
             // Toggle if button pressed
             if(searchBar.isGone) {
                 searchBar.visibility = View.VISIBLE
+                searchBar.pivotX = 0f
+                searchBar.scaleX = 0f
+
+                searchBar.animate()
+                    .scaleX(1f)
+                    .setDuration(250)
+                    .start()
 
                 // searchBar.requestFocus() -> optional
             } else {
-                searchBar.visibility = View.GONE
+                searchBar.animate()
+                    .scaleX(0f)
+                    .setDuration(250)
+                    .withEndAction { searchBar.visibility = View.GONE }
+                    .start()
             }
         }
 
