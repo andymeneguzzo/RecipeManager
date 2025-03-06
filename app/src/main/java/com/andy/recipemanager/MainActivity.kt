@@ -1,7 +1,9 @@
 package com.andy.recipemanager
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         addButton = findViewById(R.id.addButton)
         settingsButton = findViewById(R.id.settingsButton)
 
-
+        val topBar = findViewById<LinearLayout>(R.id.clickableTopBar)
+        topBar.setOnClickListener {
+            startActivity(Intent(this, GreetingsActivity::class.java))
+        }
     }
 }

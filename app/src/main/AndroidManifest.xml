@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeManager"
-        tools:targetApi="31">
+        tools:targetApi="33">
+
+        <!-- LAUNCHER -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -26,6 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- OTHER ACTIVITIES -->
+        <activity android:name=".GreetingsActivity"/>
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
