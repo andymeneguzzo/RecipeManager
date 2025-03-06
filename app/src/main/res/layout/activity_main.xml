@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:backgroundTint="@color/top_bar_background"
+            android:backgroundTint="@color/top_bottom_bar_background"
             android:contentDescription="@string/menu"
             android:src="@drawable/ic_menu_hamburger"
             android:tint="@color/white"
@@ -75,7 +75,7 @@
             android:id="@+id/userButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/top_bar_background"
+            android:backgroundTint="@color/top_bottom_bar_background"
             app:elevation="0dp"
             app:maxImageSize="32dp"
             android:contentDescription="@string/profile"
@@ -90,7 +90,7 @@
             android:contentDescription="@string/add_recipe"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:backgroundTint="@color/top_bar_background"
+            android:backgroundTint="@color/top_bottom_bar_background"
             app:elevation="0dp"
             app:maxImageSize="32dp"/>
 
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_settings"
             android:contentDescription="@string/settings"
-            android:backgroundTint="@color/top_bar_background"
+            android:backgroundTint="@color/top_bottom_bar_background"
             app:elevation="0dp"
             app:maxImageSize="32dp"/>
     </LinearLayout>

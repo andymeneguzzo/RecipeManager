@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <!-- COLORE SFONDO -->
-    <solid android:color="@color/top_bar_background"/>
+    <solid android:color="@color/top_bottom_bar_background"/>
 
     <!-- ANGOLI ARROTONDATI -->
     <corners android:radius="10dp"/>
@@ -11,5 +11,5 @@
     <!-- BORDI OPZIONALE -->
     <stroke
         android:width="0dp"
-        android:color="@color/top_bar_background"/>
+        android:color="@color/top_bottom_bar_background"/>
 </shape>
