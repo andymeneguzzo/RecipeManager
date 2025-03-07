@@ -41,6 +41,63 @@
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- COGNOME -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSurname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/surname"
+        app:layout_constraintTop_toBottomOf="@id/tilUsername"
+        app:layout_constraintStart_toStartOf="@id/tilUsername"
+        app:layout_constraintEnd_toEndOf="@id/tilUsername">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- EMAIL -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/email"
+        app:layout_constraintTop_toBottomOf="@id/tilSurname"
+        app:layout_constraintStart_toStartOf="@id/tilSurname"
+        app:layout_constraintEnd_toEndOf="@id/tilSurname">
+        
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- DATE OF BIRTH -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilBirthdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/birthdate"
+        app:layout_constraintTop_toBottomOf="@id/tilEmail"
+        app:layout_constraintStart_toStartOf="@id/tilEmail"
+        app:layout_constraintEnd_toEndOf="@id/tilEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etBirthdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <!-- BIO multiline -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilBio"
@@ -48,9 +105,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/bio"
-        app:layout_constraintTop_toBottomOf="@id/tilUsername"
-        app:layout_constraintStart_toStartOf="@id/tilUsername"
-        app:layout_constraintEnd_toEndOf="@id/tilUsername">
+        app:layout_constraintTop_toBottomOf="@id/tilBirthdate"
+        app:layout_constraintStart_toStartOf="@id/tilBirthdate"
+        app:layout_constraintEnd_toEndOf="@id/tilBirthdate">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etBio"
@@ -58,7 +115,7 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:gravity="top"
-            android:maxLines="4"/>
+            android:maxLines="3"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- GENERE -->
@@ -116,11 +173,11 @@
                 app:maxImageSize="32dp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/addButton"
+                android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/add_recipe"
-                android:src="@drawable/ic_add"
+                android:contentDescription="@string/save"
+                android:src="@drawable/ic_save"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:backgroundTint="@color/buttons"

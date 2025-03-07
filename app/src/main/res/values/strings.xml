@@ -19,4 +19,8 @@
     <string name="username">Username</string>
     <string name="bio">Biography</string>
     <string name="gender">Gender</string>
+    <string name="surname">Surname</string>
+    <string name="email">Email</string>
+    <string name="birthdate">Date of birth</string>
+    <string name="save">Save</string>
 </resources>
