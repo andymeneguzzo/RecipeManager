@@ -58,6 +58,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        userButton.setOnClickListener {
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+        }
+
         // SEARCH
         val searchButton = findViewById<ImageButton>(R.id.searchButton)
         val searchBar = findViewById<EditText>(R.id.searchBar)

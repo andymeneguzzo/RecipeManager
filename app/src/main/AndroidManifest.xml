@@ -32,6 +32,7 @@
         <activity android:name=".activities.GreetingsActivity"/>
         <activity android:name=".activities.AddRecipeActivity"/>
         <activity android:name=".activities.EditRecipeActivity"/>
+        <activity android:name=".activities.UserActivity"/>
 
 
         <meta-data
