@@ -7,7 +7,7 @@
     <color name="buttons">@color/top_bottom_bar_background</color>
     <color name="search_bar_underline">@color/top_bottom_bar_background</color>
     <color name="recipies">#FFC958</color>
-    <color name="edit_text">top_bottom_bar_background</color>
+    <color name="edit_text">@color/top_bottom_bar_background</color>
 
     <color name="text_color_not_white">#434343</color>
 </resources>
