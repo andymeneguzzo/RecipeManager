@@ -77,6 +77,7 @@
             android:id="@+id/etGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="16dp"
             android:entries="@array/gender_options"
             android:inputType="none" />
 
