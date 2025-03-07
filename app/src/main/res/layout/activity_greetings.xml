@@ -21,9 +21,9 @@
             android:layout_height="wrap_content"
             android:text="@string/greetings1"
             android:textColor="@color/text_color_not_white"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="normal"
-            android:fontFamily="@font/bagel_fat_one"/>
+            android:fontFamily="@font/baloo_chettan"/>
 
         <TextView
             android:id="@+id/tv_greeting2"
@@ -31,9 +31,9 @@
             android:layout_height="wrap_content"
             android:text="@string/greetings2"
             android:textColor="@color/text_color_not_white"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="normal"
-            android:fontFamily="@font/bagel_fat_one"
+            android:fontFamily="@font/baloo_chettan"
             android:layout_marginBottom="32dp"/>
 
         <ImageButton
