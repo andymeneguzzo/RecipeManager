@@ -11,7 +11,7 @@
     app:cardUseCompatPadding="true"
     app:cardPreventCornerOverlap="true"
     android:backgroundTint="@color/recipies"
-    app:cardElevation="4dp">
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
