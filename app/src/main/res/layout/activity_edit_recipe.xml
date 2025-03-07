@@ -141,12 +141,12 @@
             android:padding="5dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/userButton"
+                android:id="@+id/homeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/buttons"
-                android:contentDescription="@string/profile"
-                android:src="@drawable/ic_user"
+                android:contentDescription="@string/home"
+                android:src="@drawable/ic_home"
                 app:tint="@color/white"
                 app:maxImageSize="32dp"
                 app:elevation="0dp" />
