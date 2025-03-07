@@ -57,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         addButton = findViewById(R.id.addButton)
         settingsButton = findViewById(R.id.settingsButton)
 
+        addButton.setOnClickListener {
+            val intent = Intent(this, AddRecipeActivity::class.java)
+            startActivity(intent)
+        }
+
         // SEARCH
         val searchButton = findViewById<ImageButton>(R.id.searchButton)
         val searchBar = findViewById<EditText>(R.id.searchBar)

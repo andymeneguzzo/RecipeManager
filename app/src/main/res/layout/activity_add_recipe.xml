@@ -37,6 +37,9 @@
             android:id="@+id/etTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/bagel_fat_one"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
             android:backgroundTint="@color/edit_text"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -56,6 +59,9 @@
             android:id="@+id/etTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_chettan"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
             android:backgroundTint="@color/edit_text"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -75,6 +81,9 @@
             android:id="@+id/etDifficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_chettan"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
             android:backgroundTint="@color/edit_text"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -99,6 +108,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/edit_text"
+            android:fontFamily="@font/baloo_chettan"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
             android:gravity="top"
             android:inputType="textMultiLine"
             android:maxLines="8"/>
