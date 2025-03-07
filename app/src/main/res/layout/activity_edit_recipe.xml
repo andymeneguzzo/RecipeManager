@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditRecipeActivity">
+
+    <!-- SQUARE IMAGE BUTTON for recipe icon -->
+    <ImageButton
+        android:id="@+id/ibRecipeIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_recipe_temp"
+        android:contentDescription="@string/add_recipe_icon"
+        app:tint="@color/text_color_not_white"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_margin="16dp"/>
+
+    <!-- TITLE FIELD -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="@string/recipe_title"
+        app:layout_constraintStart_toEndOf="@id/ibRecipeIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ibRecipeIcon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bagel_fat_one"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
+            android:backgroundTint="@color/edit_text"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- DURATION FIELD -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/recipe_time"
+        app:layout_constraintStart_toStartOf="@id/tilTitle"
+        app:layout_constraintEnd_toEndOf="@id/tilTitle"
+        app:layout_constraintTop_toBottomOf="@id/tilTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_chettan"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
+            android:backgroundTint="@color/edit_text"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- DIFFICULTY FIELD -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDifficulty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/recipe_difficulty"
+        app:layout_constraintStart_toStartOf="@id/tilTime"
+        app:layout_constraintEnd_toEndOf="@id/tilTime"
+        app:layout_constraintTop_toBottomOf="@id/tilTime">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_chettan"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
+            android:backgroundTint="@color/edit_text"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- DESCRIPTION FIELD MULTILINE -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/recipe_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilDifficulty"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBarCard">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/edit_text"
+            android:fontFamily="@font/baloo_chettan"
+            android:textStyle="normal"
+            android:textColor="@color/text_color_not_white"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLines="8"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- BOTTOM BAR -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomBarCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/top_bottom_bar_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/userButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/buttons"
+                android:contentDescription="@string/profile"
+                android:src="@drawable/ic_user"
+                app:tint="@color/white"
+                app:maxImageSize="32dp"
+                app:elevation="0dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                android:contentDescription="@string/add_recipe"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:backgroundTint="@color/buttons"
+                app:tint="@color/white"
+                app:maxImageSize="50dp"
+                app:elevation="0dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:contentDescription="@string/settings"
+                android:backgroundTint="@color/buttons"
+                app:tint="@color/white"
+                app:maxImageSize="32dp"
+                app:elevation="0dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
