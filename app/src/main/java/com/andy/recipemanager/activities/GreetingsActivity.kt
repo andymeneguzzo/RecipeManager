@@ -20,10 +20,6 @@ class GreetingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_greetings)
 
-        val contentLayout = findViewById<LinearLayout>(R.id.contentLayout)
-        val slideUpAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_up)
-        contentLayout.startAnimation(slideUpAnimation)
-
         fabHome = findViewById(R.id.fab_home)
         imgButtonGithub = findViewById(R.id.img_button_github)
 

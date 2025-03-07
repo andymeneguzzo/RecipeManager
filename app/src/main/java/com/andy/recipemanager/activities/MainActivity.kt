@@ -85,7 +85,9 @@ class MainActivity : AppCompatActivity() {
 
         val topBar = findViewById<LinearLayout>(R.id.clickableTopBar)
         topBar.setOnClickListener {
-            startActivity(Intent(this, GreetingsActivity::class.java))
+            val intent = Intent(this, GreetingsActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
             finish()
         }
     }
