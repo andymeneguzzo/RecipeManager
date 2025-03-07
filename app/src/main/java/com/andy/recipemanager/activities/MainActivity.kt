@@ -15,11 +15,6 @@ import com.andy.recipemanager.adapters.RecipeAdapter
 import com.andy.recipemanager.data.Recipe
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-/**
- *
- * TODO: animazione searchBar
- * */
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var hamburgerButton: FloatingActionButton
