@@ -15,4 +15,8 @@
     <string name="recipe_time">Time</string>
     <string name="recipe_difficulty">Difficulty</string>
     <string name="recipe_description">Description</string>
+    <string name="user_profile_picture">User profile</string>
+    <string name="username">Username</string>
+    <string name="bio">Biography</string>
+    <string name="gender">Gender</string>
 </resources>
