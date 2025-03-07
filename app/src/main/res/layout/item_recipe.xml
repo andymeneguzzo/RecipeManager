@@ -6,7 +6,7 @@
     tools:ignore="MissingConstraints"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="4dp"
     app:cardCornerRadius="16dp"
     app:cardUseCompatPadding="true"
     app:cardPreventCornerOverlap="true"
@@ -21,8 +21,8 @@
         <!-- RECIPE IMAGE TO THE LEFT -->
         <ImageView
             android:id="@+id/ivRecipeImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:contentDescription="@string/recipe_image"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_recipe_temp"
@@ -40,7 +40,7 @@
             android:fontFamily="@font/bagel_fat_one"
             android:text="Recipe name"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btnMore"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage" />
@@ -54,7 +54,7 @@
             android:fontFamily="@font/baloo_chettan"
             android:text="Time"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
             app:layout_constraintTop_toBottomOf="@id/tvRecipeName" />
 
@@ -67,7 +67,7 @@
             android:fontFamily="@font/baloo_chettan"
             android:text="Difficulty"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/ivRecipeImage"
             app:layout_constraintTop_toBottomOf="@id/tvRecipeTime" />
 
