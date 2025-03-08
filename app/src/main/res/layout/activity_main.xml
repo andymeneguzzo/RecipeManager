@@ -36,7 +36,6 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/bagel_fat_one"
                 android:text="Recipe Manager"
-                android:textColor="@color/white"
                 android:textSize="32dp"
                 android:textStyle="normal" />
 

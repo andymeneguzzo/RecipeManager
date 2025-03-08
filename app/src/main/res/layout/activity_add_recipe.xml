@@ -42,7 +42,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/bagel_fat_one"
             android:textStyle="normal"
-            android:textColor="@color/text_color_not_white"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +62,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo_chettan"
             android:textStyle="normal"
-            android:textColor="@color/text_color_not_white"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,7 +82,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo_chettan"
             android:textStyle="normal"
-            android:textColor="@color/text_color_not_white"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,7 +106,6 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/baloo_chettan"
             android:textStyle="normal"
-            android:textColor="@color/text_color_not_white"
             android:gravity="top"
             android:inputType="textMultiLine"
             android:maxLines="8"/>
