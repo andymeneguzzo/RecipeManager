@@ -1,24 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.RecipeManager" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.RecipeManager" parent="Theme.Material3.Light.NoActionBar">
         <!-- Colori primari -->
         <item name="colorPrimary">@color/top_bottom_bar_background</item>
-        <item name="colorPrimaryVariant">@color/recipies</item>
+        <item name="colorPrimaryContainer">@color/recipies</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Colori secondari -->
         <item name="colorSecondary">@color/top_bottom_bar_background</item>
-        <item name="colorSecondaryVariant">@color/recipies</item>
+        <item name="colorSecondaryContainer">@color/recipies</item>
         <item name="colorOnSecondary">@color/white</item>
 
-        <!-- Background e Surface -->
+        <!-- Background e surface -->
         <item name="android:colorBackground">@color/white</item>
         <item name="colorSurface">@color/white</item>
 
         <!-- Colori dei testi -->
         <item name="android:textColorPrimary">@color/text_color_not_white</item>
         <item name="android:textColorSecondary">@color/text_color_not_white</item>
-        <item name="android:editTextColor">@color/top_bottom_bar_background</item>
+        <item name="android:editTextColor">@color/edit_text</item>
     </style>
 
 </resources>
