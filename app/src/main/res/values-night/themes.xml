@@ -1,7 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.RecipeManager" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Theme.RecipeManager" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Colori primari (rimangono coerenti) -->
+        <item name="colorPrimary">@color/top_bottom_bar_background</item>
+        <item name="colorPrimaryVariant">@color/recipies</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Colori secondari -->
+        <item name="colorSecondary">@color/top_bottom_bar_background</item>
+        <item name="colorSecondaryVariant">@color/recipies</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background e Surface: usiamo un colore scuro -->
+        <item name="android:colorBackground">@color/black</item>
+        <item name="colorSurface">@color/black</item>
+
+        <!-- Colori dei testi: testi chiari su sfondo scuro -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:editTextColor">@color/top_bottom_bar_background</item>
     </style>
 </resources>
