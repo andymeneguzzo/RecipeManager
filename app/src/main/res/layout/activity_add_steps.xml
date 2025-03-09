@@ -95,7 +95,7 @@
         android:src="@drawable/ic_add"
         android:contentDescription="@string/add_step"
         android:backgroundTint="@color/buttons"
-        android:tint="@color/white"
+        app:tint="@color/text_color_not_white"
         app:elevation="0dp"
         app:maxImageSize="48dp"
         app:layout_constraintBottom_toBottomOf="@id/cardAddStep"
