@@ -24,4 +24,8 @@
     <string name="email">Email</string>
     <string name="birthdate">Date of birth</string>
     <string name="save">Save</string>
+    <string name="steps_list">Steps</string>
+    <string name="step">Step</string>
+    <string name="timer">Timer (in minuti)</string>
+    <string name="add_step">Add step</string>
 </resources>
