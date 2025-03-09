@@ -119,7 +119,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/top_bottom_bar_background"
+        app:cardBackgroundColor="?attr/colorSurface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -136,10 +136,10 @@
                 android:id="@+id/homeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/buttons"
+                android:backgroundTint="?attr/colorSurface"
                 android:contentDescription="@string/home"
                 android:src="@drawable/ic_home"
-                app:tint="@color/white"
+                app:tint="?attr/colorOnSurface"
                 app:maxImageSize="32dp"
                 app:elevation="0dp" />
 
@@ -151,9 +151,9 @@
                 android:contentDescription="@string/forward"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:backgroundTint="@color/buttons"
-                app:tint="@color/white"
-                app:maxImageSize="65dp"
+                android:backgroundTint="?attr/colorPrimary"
+                app:tint="?attr/colorOnSurface"
+                app:maxImageSize="50dp"
                 app:elevation="0dp"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -162,8 +162,8 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_settings"
                 android:contentDescription="@string/settings"
-                android:backgroundTint="@color/buttons"
-                app:tint="@color/white"
+                android:backgroundTint="?attr/colorSurface"
+                app:tint="?attr/colorOnSurface"
                 app:maxImageSize="32dp"
                 app:elevation="0dp"/>
         </LinearLayout>
