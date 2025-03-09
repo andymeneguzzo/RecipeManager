@@ -6,7 +6,8 @@
     <color name="top_bottom_bar_background">#FAB10D</color>
     <color name="buttons">@color/top_bottom_bar_background</color>
     <color name="search_bar_underline">@color/top_bottom_bar_background</color>
-    <color name="recipies">#FFC958</color>
+    <color name="recipies">#F57C00</color>
+    <color name="steps">@color/recipies</color>
     <color name="edit_text">@color/top_bottom_bar_background</color>
 
     <color name="text_color_not_white">#434343</color>
