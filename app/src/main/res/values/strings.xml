@@ -11,6 +11,7 @@
     <string name="more_options">More</string>
     <string name="search">Search</string>
     <string name="add_recipe_icon">Recipe Icon</string>
+    <string name="forward">Forward</string>
     <string name="recipe_title">Recipe title</string>
     <string name="recipe_time">Time</string>
     <string name="recipe_difficulty">Difficulty</string>

@@ -144,11 +144,11 @@
                 app:elevation="0dp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/addButton"
+                android:id="@+id/forwardButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_add"
-                android:contentDescription="@string/add_recipe"
+                android:src="@drawable/ic_arrow"
+                android:contentDescription="@string/forward"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:backgroundTint="@color/buttons"

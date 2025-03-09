@@ -5,10 +5,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.andy.recipemanager.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlin.jvm.java
 
 class AddRecipeActivity : AppCompatActivity() {
 
-    private lateinit var addButton: FloatingActionButton
+    private lateinit var forwardButton: FloatingActionButton
     private lateinit var homeButton: FloatingActionButton
     private lateinit var settingsButton: FloatingActionButton
 
@@ -17,6 +18,12 @@ class AddRecipeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_recipe)
 
         homeButton = findViewById(R.id.homeButton)
+        forwardButton = findViewById(R.id.forwardButton)
+
+        forwardButton.setOnClickListener {
+            val intent = Intent(this, AddStepsActivity::class.java)
+            startActivity(intent)
+        }
 
         homeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
