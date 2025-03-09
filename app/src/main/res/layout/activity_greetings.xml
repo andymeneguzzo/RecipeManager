@@ -52,8 +52,8 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_home"
         android:contentDescription="@string/home"
-        android:backgroundTint="@color/buttons"
-        app:tint="@color/white"
-        app:elevation="0dp"/>
+        android:backgroundTint="?attr/colorSurface"
+        app:tint="?attr/colorOnSurface"
+        app:elevation="4dp"/>
 
 </FrameLayout>
