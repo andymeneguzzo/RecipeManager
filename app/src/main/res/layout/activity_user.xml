@@ -146,7 +146,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        android:backgroundTint="@color/top_bottom_bar_background"
+        app:cardBackgroundColor="?attr/colorSurface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -163,8 +163,8 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/home"
                 android:src="@drawable/ic_home"
-                android:backgroundTint="@color/buttons"
-                app:tint="@color/white"
+                android:backgroundTint="?attr/colorSurface"
+                app:tint="?attr/colorOnPrimary"
                 app:elevation="0dp"
                 app:maxImageSize="32dp" />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -176,17 +176,17 @@
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:backgroundTint="@color/buttons"
-                app:tint="@color/white"
+                app:tint="?attr/colorOnPrimary"
                 app:elevation="0dp"
-                app:maxImageSize="65dp" />
+                app:maxImageSize="50dp" />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/settingsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/settings"
                 android:src="@drawable/ic_settings"
-                android:backgroundTint="@color/buttons"
-                app:tint="@color/white"
+                android:backgroundTint="?attr/colorSurface"
+                app:tint="?attr/colorOnPrimary"
                 app:elevation="0dp"
                 app:maxImageSize="32dp" />
         </LinearLayout>
