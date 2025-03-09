@@ -1,23 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Tema scuro basato su Material3 -->
     <style name="Theme.RecipeManager" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Colori primari -->
-        <item name="colorPrimary">@color/top_bottom_bar_background</item>
-        <item name="colorPrimaryContainer">@color/recipies</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">#FAB10D</item>
+        <item name="colorPrimaryContainer">#FFD54F</item>
+        <item name="colorOnPrimary">#434343</item>
 
-        <!-- Colori secondari -->
-        <item name="colorSecondary">@color/top_bottom_bar_background</item>
-        <item name="colorSecondaryContainer">@color/recipies</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <!-- Colori secondari (accento) -->
+        <item name="colorSecondary">#F57C00</item>
+        <item name="colorSecondaryContainer">#F57C00</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
 
-        <!-- Background e surface: usiamo il nero per la modalità scura -->
-        <item name="android:colorBackground">@color/black</item>
-        <item name="colorSurface">@color/black</item>
+        <!-- Background e Surface: per il dark, utilizziamo il nero -->
+        <item name="android:colorBackground">#000000</item>
+        <item name="colorSurface">#000000</item>
+        <item name="colorOnSurface">#FFFFFF</item>
 
-        <!-- Colori dei testi: testi chiari su sfondo scuro -->
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/white</item>
-        <item name="android:editTextColor">@color/edit_text</item>
+        <!-- Testi ed EditText: testi chiari su sfondo scuro -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:editTextColor">#FFFFFF</item>
     </style>
 </resources>
