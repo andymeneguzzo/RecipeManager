@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Tema scuro basato su Material3 -->
-    <style name="Theme.RecipeManager" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Tema chiaro basato su Material3 -->
+    <style name="Theme.RecipeManager" parent="Theme.Material3.Light.NoActionBar">
         <!-- Colori primari -->
         <item name="colorPrimary">#FAB10D</item>
         <item name="colorPrimaryContainer">#FFD54F</item>
-        <item name="colorOnPrimary">#AFAFAF</item>
+        <item name="colorOnPrimary">#434343</item>
 
         <!-- Colori secondari (accento) -->
-        <item name="colorSecondary">#C76101</item>
-        <item name="colorSecondaryContainer">#C76101</item>
+        <item name="colorSecondary">#F57C00</item>
+        <item name="colorSecondaryContainer">#F57C00</item>
         <item name="colorOnSecondary">#FFFFFF</item>
 
-        <!-- Background e Surface: per il dark, utilizziamo il nero -->
-        <item name="android:colorBackground">#000000</item>
-        <item name="colorSurface">#000000</item>
-        <item name="colorOnSurface">#FFFFFF</item>
+        <!-- Background e Surface -->
+        <item name="android:colorBackground">#FDF3E3</item>
+        <item name="colorSurface">#FDF3E3</item>
+        <item name="colorOnSurface">#434343</item>
 
-        <!-- Testi ed EditText: testi chiari su sfondo scuro -->
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <item name="android:editTextColor">#FFFFFF</item>
+        <!-- Testi ed EditText -->
+        <item name="android:textColorPrimary">#434343</item>
+        <item name="android:editTextColor">#434343</item>
     </style>
 </resources>
