@@ -31,6 +31,6 @@
     <string name="notifications">Notifications</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="language">Language</string>
-    <string name="account_privacy">Account privacy</string>
-    <string name="sync_data">Sync data</string>
+    <string name="account_privacy">Account privacy (to be implemented)</string>
+    <string name="sync_data">Sync data (to be implemented)</string>
 </resources>
