@@ -1,5 +1,10 @@
 package com.andy.recipemanager.activities
 
+/**
+ *
+ * TODO -> implementa drawer navigation con intent necessari!
+ * */
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
