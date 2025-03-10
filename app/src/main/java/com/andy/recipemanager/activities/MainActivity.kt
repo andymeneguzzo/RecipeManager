@@ -122,6 +122,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // Imposta il listener per la NavigationView
         navigationView.setNavigationItemSelectedListener(this)
+        navigationView.itemIconTintList = null
 
         // Al click del bottone hamburger, apri il cassetto laterale
         hamburgerButton.setOnClickListener {
