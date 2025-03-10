@@ -21,6 +21,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.andy.recipemanager.R
 import com.andy.recipemanager.adapters.RecipeAdapter
 import com.andy.recipemanager.data.Recipe
+import com.andy.recipemanager.drawer_activities.BurgerListActivity
+import com.andy.recipemanager.drawer_activities.DessertListActivity
+import com.andy.recipemanager.drawer_activities.FishListActivity
+import com.andy.recipemanager.drawer_activities.MeatListActivity
+import com.andy.recipemanager.drawer_activities.PastaListActivity
+import com.andy.recipemanager.drawer_activities.PizzaListActivity
+import com.andy.recipemanager.drawer_activities.SushiListActivity
+import com.andy.recipemanager.drawer_activities.VeggieListActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
@@ -125,16 +133,38 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_pasta -> {
-                // Azione per "Pasta"
-                // Esempio: mostrare un toast, lanciare una Activity, filtrare la lista, ecc.
+                val intent = Intent(this, PastaListActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_carne -> {
-                // Azione per "Carne"
+                val intent = Intent(this, MeatListActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_pesce -> {
-                // Azione per "Pesce"
+                val intent = Intent(this, FishListActivity::class.java)
+                startActivity(intent)
             }
-            // Aggiungi qui le altre voci di menu, se presenti
+            R.id.nav_dolci -> {
+                val intent = Intent(this, DessertListActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_burger -> {
+                val intent = Intent(this, BurgerListActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_pizza -> {
+                val intent = Intent(this, PizzaListActivity::class.java)
+                startActivity(intent)
+
+            }
+            R.id.nav_sushi -> {
+                val intent = Intent(this, SushiListActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_veggie -> {
+                val intent = Intent(this, VeggieListActivity::class.java)
+                startActivity(intent)
+            }
         }
         // Chiudi il drawer dopo il click
         drawerLayout.closeDrawer(GravityCompat.START)
