@@ -2,7 +2,7 @@ package com.andy.recipemanager.activities
 
 /**
  *
- * TODO -> implementa drawer navigation con intent necessari!
+ * TODO -> implementa list icons per mostrare a utente le icone che può selezionare
  * */
 
 import android.content.Intent
