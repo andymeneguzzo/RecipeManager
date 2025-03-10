@@ -3,16 +3,16 @@ package com.andy.recipemanager.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AutoCompleteTextView
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.andy.recipemanager.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class UserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
 
-        val btnHome = findViewById<FloatingActionButton>(R.id.homeButton)
+        val btnHome = findViewById<ImageButton>(R.id.homeButton)
 
         btnHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

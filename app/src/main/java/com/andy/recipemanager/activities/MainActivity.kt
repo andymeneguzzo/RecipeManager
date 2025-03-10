@@ -39,10 +39,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var navigationView: NavigationView
 
     // Pulsanti principali
-    private lateinit var hamburgerButton: FloatingActionButton
-    private lateinit var userButton: FloatingActionButton
-    private lateinit var addButton: FloatingActionButton
-    private lateinit var settingsButton: FloatingActionButton
+    private lateinit var hamburgerButton: ImageButton
+    private lateinit var userButton: ImageButton
+    private lateinit var addButton: ImageButton
+    private lateinit var settingsButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
