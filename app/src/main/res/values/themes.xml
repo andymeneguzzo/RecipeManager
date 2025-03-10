@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Tema chiaro basato su Material3 -->
-    <style name="Theme.RecipeManager" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.RecipeManager" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Colori primari -->
         <item name="colorPrimary">#FAB10D</item>
         <item name="colorPrimaryContainer">#FFD54F</item>
