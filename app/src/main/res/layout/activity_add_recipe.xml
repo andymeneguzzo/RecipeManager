@@ -132,40 +132,54 @@
             android:gravity="center"
             android:padding="5dp">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <ImageButton
                 android:id="@+id/homeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="?attr/colorSurface"
                 android:contentDescription="@string/home"
                 android:src="@drawable/ic_home"
-                app:tint="?attr/colorOnSurface"
-                app:maxImageSize="32dp"
-                app:elevation="0dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:maxHeight="32dp"
+                android:maxWidth="32dp"
+                android:elevation="0dp"
+                app:tint="?attr/colorOnSurface"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="64dp"/>
+
+            <ImageButton
                 android:id="@+id/forwardButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow"
                 android:contentDescription="@string/forward"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:backgroundTint="?attr/colorPrimary"
-                app:tint="?attr/colorOnSurface"
-                app:maxImageSize="50dp"
-                app:elevation="0dp"/>
+                android:src="@drawable/ic_arrow"
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:maxHeight="32dp"
+                android:maxWidth="32dp"
+                android:elevation="0dp"
+                app:tint="?attr/colorOnSurface"
+                android:background="?attr/selectableItemBackgroundBorderless"
+
+                android:layout_marginEnd="64dp"/>
+
+            <ImageButton
                 android:id="@+id/settingsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_settings"
                 android:contentDescription="@string/settings"
-                android:backgroundTint="?attr/colorSurface"
+                android:src="@drawable/ic_settings"
+
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:maxHeight="32dp"
+                android:maxWidth="32dp"
+                android:elevation="0dp"
                 app:tint="?attr/colorOnSurface"
-                app:maxImageSize="32dp"
-                app:elevation="0dp"/>
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
