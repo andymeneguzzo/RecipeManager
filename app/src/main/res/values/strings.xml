@@ -28,4 +28,7 @@
     <string name="step">Step</string>
     <string name="timer">Timer (in minuti)</string>
     <string name="add_step">Add step</string>
+    <string name="notifications">Notifications</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="language">Language</string>
 </resources>
