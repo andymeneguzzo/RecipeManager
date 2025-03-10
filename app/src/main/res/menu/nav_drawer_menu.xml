@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_pasta"
+        android:title="Pasta"
+        android:icon="@drawable/ic_pasta" />
+
+    <item
+        android:id="@+id/nav_pizza"
+        android:title="Pizza"
+        android:icon="@drawable/ic_pizza" />
+
+    <item
+        android:id="@+id/nav_carne"
+        android:title="Carne"
+        android:icon="@drawable/ic_carne" />
+
+    <item
+        android:id="@+id/nav_burger"
+        android:title="Burger"
+        android:icon="@drawable/ic_burger" />
+
+    <item
+        android:id="@+id/nav_pesce"
+        android:title="Pesce"
+        android:icon="@drawable/ic_pesce" />
+
+    <item
+        android:id="@+id/nav_veggie"
+        android:title="Veggie"
+        android:icon="@drawable/ic_veggie" />
+
+    <item
+        android:id="@+id/nav_sushi"
+        android:title="Sushi"
+        android:icon="@drawable/ic_sushi" />
+
+    <item
+        android:id="@+id/nav_dolci"
+        android:title="Dolci"
+        android:icon="@drawable/ic_dolci" />
+
+
+</menu>
