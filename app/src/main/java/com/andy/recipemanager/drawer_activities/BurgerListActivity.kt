@@ -1,12 +1,12 @@
-package com.andy.recipemanager.activities
+package com.andy.recipemanager.drawer_activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.andy.recipemanager.R
 
-class EditStepsActivity : AppCompatActivity() {
+class BurgerListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_steps)
+        setContentView(R.layout.activity_list_burger)
     }
 }
