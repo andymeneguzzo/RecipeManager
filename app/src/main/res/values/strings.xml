@@ -34,4 +34,12 @@
     <string name="language">Language</string>
     <string name="account_privacy">Account privacy (to be implemented)</string>
     <string name="sync_data">Sync data (to be implemented)</string>
+    <string name="pasta">Pasta</string>
+    <string name="pesce">Fish</string>
+    <string name="pizza">Pizza</string>
+    <string name="burger">Burger</string>
+    <string name="dolci">Dessert</string>
+    <string name="veggie">Veggie</string>
+    <string name="sushi">Sushi</string>
+    <string name="carne">Meat</string>
 </resources>

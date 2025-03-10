@@ -3,42 +3,42 @@
 
     <item
         android:id="@+id/nav_pasta"
-        android:title="Pasta"
+        android:title="@string/pasta"
         android:icon="@drawable/ic_pasta" />
 
     <item
         android:id="@+id/nav_pizza"
-        android:title="Pizza"
+        android:title="@string/pizza"
         android:icon="@drawable/ic_pizza" />
 
     <item
         android:id="@+id/nav_carne"
-        android:title="Carne"
+        android:title="@string/carne"
         android:icon="@drawable/ic_carne" />
 
     <item
         android:id="@+id/nav_burger"
-        android:title="Burger"
+        android:title="@string/burger"
         android:icon="@drawable/ic_burger" />
 
     <item
         android:id="@+id/nav_pesce"
-        android:title="Pesce"
+        android:title="@string/pesce"
         android:icon="@drawable/ic_pesce" />
 
     <item
         android:id="@+id/nav_veggie"
-        android:title="Veggie"
+        android:title="@string/veggie"
         android:icon="@drawable/ic_veggie" />
 
     <item
         android:id="@+id/nav_sushi"
-        android:title="Sushi"
+        android:title="@string/sushi"
         android:icon="@drawable/ic_sushi" />
 
     <item
         android:id="@+id/nav_dolci"
-        android:title="Dolci"
+        android:title="@string/dolci"
         android:icon="@drawable/ic_dolci" />
 
 
