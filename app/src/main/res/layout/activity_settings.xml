@@ -40,6 +40,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/notifications"
+                        android:fontFamily="@font/baloo_chettan"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -71,6 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/dark_mode"
+                        android:fontFamily="@font/baloo_chettan"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -102,6 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/language"
+                        android:fontFamily="@font/baloo_chettan"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -109,6 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:entries="@array/language_options"
+                        android:fontFamily="@font/baloo_chettan"
                         android:theme="@style/Widget.AppCompat.Spinner.DropDown"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -133,6 +137,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/account_privacy"
+                        android:fontFamily="@font/baloo_chettan"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -164,6 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/sync_data"
+                        android:fontFamily="@font/baloo_chettan"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
