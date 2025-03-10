@@ -8,8 +8,8 @@
         <item name="colorOnPrimary">#434343</item>
 
         <!-- Colori secondari (accento) -->
-        <item name="colorSecondary">#F57C00</item>
-        <item name="colorSecondaryContainer">#F57C00</item>
+        <item name="colorSecondary">#A95300</item>
+        <item name="colorSecondaryContainer">#A95300</item>
         <item name="colorOnSecondary">#FFFFFF</item>
 
         <!-- Background e Surface: per il dark, utilizziamo il nero -->
