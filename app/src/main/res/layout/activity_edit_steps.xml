@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_edit"
-        android:contentDescription="@string/save_edits"
+        android:contentDescription="@string/edit_steps"
         android:backgroundTint="@color/buttons"
         app:tint="@color/text_color_not_white"
         app:elevation="4dp"

@@ -35,6 +35,7 @@
         <activity android:name=".activities.UserActivity"/>
         <activity android:name=".activities.AddStepsActivity"/>
         <activity android:name=".activities.EditStepsActivity"/>
+        <activity android:name=".activities.SettingsActivity"/>
 
         <!-- DRAWER LIST ACTIVITY -->
         <activity android:name=".drawer_activities.BurgerListActivity"/>

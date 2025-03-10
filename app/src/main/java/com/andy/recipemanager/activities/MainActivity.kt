@@ -70,6 +70,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(intent)
         }
 
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
         // --- SEARCH BAR ---
         val searchButton = findViewById<ImageButton>(R.id.searchButton)
         val searchBar = findViewById<EditText>(R.id.searchBar)
