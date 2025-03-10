@@ -5,7 +5,7 @@
         <!-- Colori primari -->
         <item name="colorPrimary">#FAB10D</item>
         <item name="colorPrimaryContainer">#FFD54F</item>
-        <item name="colorOnPrimary">#434343</item>
+        <item name="colorOnPrimary">#AFAFAF</item>
 
         <!-- Colori secondari (accento) -->
         <item name="colorSecondary">#C76101</item>
