@@ -12,10 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.MainActivity"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+        tools:context=".activities.MainActivity">
 
         <!-- BARRA IN ALTO CON TITOLO E HAMBURGER ALTO A DESTRA -->
         <com.google.android.material.card.MaterialCardView
