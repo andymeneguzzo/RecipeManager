@@ -13,6 +13,7 @@ class AddRecipeActivity : AppCompatActivity() {
     private lateinit var forwardButton: ImageButton
     private lateinit var homeButton: ImageButton
     private lateinit var settingsButton: ImageButton
+    private lateinit var ibRecipeIcon: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,8 @@ class AddRecipeActivity : AppCompatActivity() {
 
         homeButton = findViewById(R.id.homeButton)
         forwardButton = findViewById(R.id.forwardButton)
+        settingsButton = findViewById(R.id.settingsButton)
+        ibRecipeIcon = findViewById(R.id.ibRecipeIcon)
 
         forwardButton.setOnClickListener {
             val intent = Intent(this, AddStepsActivity::class.java)
@@ -30,6 +33,16 @@ class AddRecipeActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        ibRecipeIcon.setOnClickListener {
+            val intent = Intent(this, IconsListActivity::class.java)
+            startActivity(intent)
         }
     }
 }
