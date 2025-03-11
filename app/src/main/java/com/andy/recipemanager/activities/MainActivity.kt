@@ -2,7 +2,7 @@ package com.andy.recipemanager.activities
 
 /**
  *
- * TODO -> implementa list icons per mostrare a utente le icone che può selezionare
+ * TODO -> implementa list icons per mostrare a utente le icone che può selezionare, metti image button su AddRecipeActivity e EditRecipeActivity
  * */
 
 import android.content.Intent
