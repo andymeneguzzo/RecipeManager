@@ -15,19 +15,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:padding="8dp">
 
-        <!-- STEP DESCRIPTION -->
-        <TextView
-            android:id="@+id/tvStepDescription"
+        <!-- RIGA SUPERIORE (Descrizione e More button) -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/android:textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"
-            android:text="Descrizione"/>
+            android:orientation="horizontal">
 
+            <!-- STEP DESCRIPTION -->
+            <TextView
+                android:id="@+id/tvStepDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp"
+                android:textColor="?attr/android:textColorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Descrizione" />
+
+            <!-- MORE BUTTON -->
+            <ImageButton
+                android:id="@+id/btnMore"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_more_vert"
+                app:tint="?attr/colorOnSecondary"
+                android:contentDescription="@string/more_options"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"/>
+        </LinearLayout>
+
+        <!-- STEP TIMER (sotto) -->
         <TextView
             android:id="@+id/tvStepTimer"
             android:layout_width="wrap_content"
