@@ -42,4 +42,6 @@
     <string name="veggie">Veggie</string>
     <string name="sushi">Sushi</string>
     <string name="carne">Meat</string>
+    <string name="choose_icon">Icons</string>
+    <string name="icon">Icon</string>
 </resources>
