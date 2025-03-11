@@ -41,7 +41,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_more_vert"
-                app:tint="?attr/colorOnSecondary"
+                app:tint="?attr/android:textColorPrimary"
                 android:contentDescription="@string/more_options"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="centerInside"
