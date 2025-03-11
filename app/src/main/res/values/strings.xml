@@ -46,5 +46,6 @@
     <string name="icon">Icon</string>
     <string name="modify_recipe">Modify recipe</string>
     <string name="modify_steps">Modify steps</string>
+    <string name="modify_step">Modify step</string>
     <string name="delete">Delete</string>
 </resources>
