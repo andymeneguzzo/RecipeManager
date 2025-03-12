@@ -11,7 +11,6 @@ class RecipeDatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
-        // Crea la tabella delle ricette
         val createRecipesTableQuery = """
             CREATE TABLE ${RecipeContract.RecipeEntry.TABLE_NAME} (
                 ${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -24,7 +23,6 @@ class RecipeDatabaseHelper(context: Context) :
         """.trimIndent()
         db.execSQL(createRecipesTableQuery)
 
-        // Crea la tabella degli step
         val createStepsTableQuery = """
             CREATE TABLE ${StepsContract.StepEntry.TABLE_NAME} (
                 ${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,6 +65,11 @@ class RecipeDatabaseHelper(context: Context) :
         return db.update(RecipeContract.RecipeEntry.TABLE_NAME, values, "${BaseColumns._ID} = ?", arrayOf(recipeId.toString()))
     }
 
+    fun deleteRecipe(recipeId: Long): Int {
+        val db = this.writableDatabase
+        return db.delete(RecipeContract.RecipeEntry.TABLE_NAME, "${BaseColumns._ID} = ?", arrayOf(recipeId.toString()))
+    }
+
     fun getRecipe(recipeId: Long): Recipe? {
         val db = this.readableDatabase
         val cursor: Cursor = db.query(
@@ -80,12 +83,13 @@ class RecipeDatabaseHelper(context: Context) :
         )
         var recipe: Recipe? = null
         if (cursor.moveToFirst()) {
+            val id = cursor.getLong(cursor.getColumnIndexOrThrow(BaseColumns._ID))
             val name = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_NAME))
             val time = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_TIME))
             val difficulty = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_DIFFICULTY))
             val iconResId = cursor.getInt(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_ICON_RES_ID))
             val description = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_DESCRIPTION))
-            recipe = Recipe(name, time, difficulty, iconResId, description)
+            recipe = Recipe(id, name, time, difficulty, iconResId, description)
         }
         cursor.close()
         return recipe
@@ -99,17 +103,17 @@ class RecipeDatabaseHelper(context: Context) :
             null, null, null, null, null, null
         )
         while (cursor.moveToNext()) {
+            val id = cursor.getLong(cursor.getColumnIndexOrThrow(BaseColumns._ID))
             val name = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_NAME))
             val time = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_TIME))
             val difficulty = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_DIFFICULTY))
             val iconResId = cursor.getInt(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_ICON_RES_ID))
             val description = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_DESCRIPTION))
-            recipes.add(Recipe(name, time, difficulty, iconResId, description))
+            recipes.add(Recipe(id, name, time, difficulty, iconResId, description))
         }
         cursor.close()
         return recipes
     }
-
 
     fun insertStep(recipeId: Long, step: Step): Long {
         val db = this.writableDatabase
@@ -123,7 +127,7 @@ class RecipeDatabaseHelper(context: Context) :
 
     companion object {
         private const val DATABASE_NAME = "recipes.db"
-        private const val DATABASE_VERSION = 2  // aggiornato per includere la tabella degli step
+        private const val DATABASE_VERSION = 2
     }
 }
 

@@ -1,5 +1,6 @@
 package com.andy.recipemanager.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,11 +8,15 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.andy.recipemanager.R
 import com.andy.recipemanager.data.Recipe
+import com.andy.recipemanager.data.RecipeDatabaseHelper
+import com.andy.recipemanager.activities.EditRecipeActivity
+import com.andy.recipemanager.activities.EditStepsActivity
 
-class RecipeAdapter(private val recipes: List<Recipe>)
+class RecipeAdapter(private val recipes: MutableList<Recipe>)
     : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,44 +36,55 @@ class RecipeAdapter(private val recipes: List<Recipe>)
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = recipes[position]
 
-        // Set text
         holder.tvRecipeName.text = recipe.name
         holder.tvRecipeTime.text = recipe.time
         holder.tvRecipeDifficulty.text = recipe.difficulty
+        holder.ivRecipeImage.setImageResource(recipe.iconResId)
 
-        // If you have an image resource or a URL, set it here
-        // e.g., holder.ivRecipeImage.setImageResource(recipe.imageResId)
-
-        // Show PopupMenu when user presses the More button
         holder.btnMore.setOnClickListener { view ->
-            // Crea il PopupMenu
             val popupMenu = PopupMenu(view.context, view)
-            // Gonfia il layout del menu
             popupMenu.menuInflater.inflate(R.menu.popup_recipe_menu, popupMenu.menu)
-
-            // Gestione click sulle voci del menu
             popupMenu.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.action_modify_recipe -> {
-                        // Azione: "Modify recipe"
-                        // apri EditRecipeActivity
-                        true
-                    }
-                    R.id.action_modify_steps -> {
-                        // Azione: "Modify steps"
-                        // apri StepsListActivity (da creare)
+                        val context = view.context
+                        val intent = Intent(context, EditRecipeActivity::class.java)
+                        intent.putExtra("RECIPE_ID", recipe.id)
+                        context.startActivity(intent)
                         true
                     }
                     R.id.action_delete -> {
-                        // Azione: "Delete"
-                        // Mostra un dialog di conferma e rimuovi la ricetta
+                        val context = view.context
+                        val builder = androidx.appcompat.app.AlertDialog.Builder(context)
+                        builder.setTitle("Delete Recipe")
+                        builder.setMessage("Are you sure you want to delete this recipe?")
+                        builder.setPositiveButton("Yes") { dialog, _ ->
+                            val dbHelper = RecipeDatabaseHelper(context)
+                            val rows = dbHelper.deleteRecipe(recipe.id)
+                            if (rows > 0) {
+                                Toast.makeText(context, "Recipe deleted", Toast.LENGTH_SHORT).show()
+                                recipes.removeAt(position)
+                                notifyItemRemoved(position)
+                            } else {
+                                Toast.makeText(context, "Error deleting recipe", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        builder.setNegativeButton("No") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        builder.show()
+                        true
+                    }
+                    R.id.action_modify_steps -> {
+                        val context = view.context
+                        val intent = Intent(context, EditStepsActivity::class.java)
+                        intent.putExtra("RECIPE_ID", recipe.id)
+                        context.startActivity(intent)
                         true
                     }
                     else -> false
                 }
             }
-
-            // Mostra il menu popup
             popupMenu.show()
         }
     }
