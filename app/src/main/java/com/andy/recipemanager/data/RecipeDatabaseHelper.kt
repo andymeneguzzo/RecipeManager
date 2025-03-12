@@ -125,6 +125,51 @@ class RecipeDatabaseHelper(context: Context) :
         return db.insert(StepsContract.StepEntry.TABLE_NAME, null, values)
     }
 
+    fun getStepsForRecipe(recipeId: Long): List<Step> {
+        val steps = mutableListOf<Step>()
+        val db = this.readableDatabase
+        val cursor = db.query(
+            StepsContract.StepEntry.TABLE_NAME,
+            null,
+            "${StepsContract.StepEntry.COLUMN_RECIPE_ID} = ?",
+            arrayOf(recipeId.toString()),
+            null,
+            null,
+            null
+        )
+        while (cursor.moveToNext()) {
+            val id = cursor.getLong(cursor.getColumnIndexOrThrow(BaseColumns._ID))
+            val description = cursor.getString(cursor.getColumnIndexOrThrow(StepsContract.StepEntry.COLUMN_DESCRIPTION))
+            val timer = cursor.getString(cursor.getColumnIndexOrThrow(StepsContract.StepEntry.COLUMN_TIMER))
+            steps.add(Step(id, description, timer))
+        }
+        cursor.close()
+        return steps
+    }
+
+    fun updateStep(stepId: Long, step: Step): Int {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(StepsContract.StepEntry.COLUMN_DESCRIPTION, step.description)
+            put(StepsContract.StepEntry.COLUMN_TIMER, step.timer)
+        }
+        return db.update(
+            StepsContract.StepEntry.TABLE_NAME,
+            values,
+            "${BaseColumns._ID} = ?",
+            arrayOf(stepId.toString())
+        )
+    }
+
+    fun deleteStep(stepId: Long): Int {
+        val db = this.writableDatabase
+        return db.delete(
+            StepsContract.StepEntry.TABLE_NAME,
+            "${BaseColumns._ID} = ?",
+            arrayOf(stepId.toString())
+        )
+    }
+
     companion object {
         private const val DATABASE_NAME = "recipes.db"
         private const val DATABASE_VERSION = 2
