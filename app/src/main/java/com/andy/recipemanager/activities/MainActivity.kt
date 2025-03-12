@@ -1,10 +1,5 @@
 package com.andy.recipemanager.activities
 
-/**
- *
- * TODO -> implementa list icons per mostrare a utente le icone che può selezionare, metti image button su AddRecipeActivity e EditRecipeActivity
- * */
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -19,8 +14,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andy.recipemanager.R
-import com.andy.recipemanager.adapters.RecipeAdapter
-import com.andy.recipemanager.data.Recipe
 import com.andy.recipemanager.drawer_activities.BurgerListActivity
 import com.andy.recipemanager.drawer_activities.DessertListActivity
 import com.andy.recipemanager.drawer_activities.FishListActivity
@@ -29,7 +22,6 @@ import com.andy.recipemanager.drawer_activities.PastaListActivity
 import com.andy.recipemanager.drawer_activities.PizzaListActivity
 import com.andy.recipemanager.drawer_activities.SushiListActivity
 import com.andy.recipemanager.drawer_activities.VeggieListActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -48,31 +40,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)  // Usa il tuo layout con il DrawerLayout
 
-        // --- GESTIONE RECYCLERVIEW ---
-        val recyclerView = findViewById<RecyclerView>(R.id.recipeList)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        // Se in futuro desideri mostrare una lista di ricette reali,
+        // puoi recuperarle dal DB e collegarle a un RecyclerView qui.
+        // Per ora, non carichiamo alcun adapter né ricette di esempio.
 
-        val sampleRecipes = listOf(
-            Recipe("Rigatoni alla Carbonara", "15 min", "Easy"),
-            Recipe("Arrosto e Patate", "2 hrs", "Medium"),
-            Recipe("Pizza Margherita", "30 min", "Easy")
-        )
-        val adapter = RecipeAdapter(sampleRecipes)
-        recyclerView.adapter = adapter
-
-        // --- RIFERIMENTI AI PULSANTI ---
+        // --- RIFERIMENTI AI PULSANTI E VIEW ---
         hamburgerButton = findViewById(R.id.hamburgerButton)
         userButton = findViewById(R.id.userButton)
         addButton = findViewById(R.id.addButton)
         settingsButton = findViewById(R.id.settingsButton)
 
-        // Al click del pulsante "Aggiungi", apri la Activity dedicata
+        val searchButton = findViewById<ImageButton>(R.id.searchButton)
+        val searchBar = findViewById<EditText>(R.id.searchBar)
+        val topBar = findViewById<LinearLayout>(R.id.clickableTopBar)
+
+        // --- LISTENER PULSANTI ---
         addButton.setOnClickListener {
             val intent = Intent(this, AddRecipeActivity::class.java)
             startActivity(intent)
         }
 
-        // Al click del pulsante "Utente", apri la Activity dedicata
         userButton.setOnClickListener {
             val intent = Intent(this, UserActivity::class.java)
             startActivity(intent)
@@ -82,10 +69,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
-
-        // --- SEARCH BAR ---
-        val searchButton = findViewById<ImageButton>(R.id.searchButton)
-        val searchBar = findViewById<EditText>(R.id.searchBar)
 
         searchButton.setOnClickListener {
             // Mostra o nascondi la barra di ricerca con un'animazione
@@ -107,8 +90,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
 
-        // Clic sul topBar per mostrare GreetingsActivity
-        val topBar = findViewById<LinearLayout>(R.id.clickableTopBar)
         topBar.setOnClickListener {
             val intent = Intent(this, GreetingsActivity::class.java)
             startActivity(intent)
@@ -156,7 +137,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_pizza -> {
                 val intent = Intent(this, PizzaListActivity::class.java)
                 startActivity(intent)
-
             }
             R.id.nav_sushi -> {
                 val intent = Intent(this, SushiListActivity::class.java)
@@ -173,7 +153,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     // Se l'utente preme il tasto "indietro" mentre il cassetto è aperto, chiudi il drawer
-    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
+    @Deprecated("This method has been deprecated in favor of using the {@link OnBackPressedDispatcher}.")
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)

@@ -4,5 +4,5 @@ data class Recipe (
     val name: String,
     val time: String,
     val difficulty: String,
-    // val iconResId: Int
+    val iconResId: Int
 )
