@@ -1,5 +1,6 @@
 package com.andy.recipemanager.adapters
 
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,7 @@ import com.andy.recipemanager.R
 
 class IconAdapter(
     private val context: Context,
-    private val icons: List<Int>  // Lista di R.drawable.xxx
+    private val icons: List<Int>
 ) : BaseAdapter() {
 
     override fun getCount(): Int {
@@ -26,13 +27,9 @@ class IconAdapter(
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        // Ricicla la view se esiste, altrimenti la inflate
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_icon, parent, false)
-
-        // Assegna l'icona
         val imageView = view.findViewById<ImageView>(R.id.iconImage)
         imageView.setImageResource(icons[position])
-
         return view
     }
 }
