@@ -1,12 +1,76 @@
 package com.andy.recipemanager.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.andy.recipemanager.R
+import com.andy.recipemanager.adapters.StepsAdapter
+import com.andy.recipemanager.data.RecipeDatabaseHelper
+import com.andy.recipemanager.data.Step
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
 
 class AddStepsActivity : AppCompatActivity() {
+
+    private lateinit var rvSteps: RecyclerView
+    private lateinit var fabAddStep: FloatingActionButton
+    private lateinit var etStepDescription: TextInputEditText
+    private lateinit var etStepTimer: TextInputEditText
+
+    private val stepsList = mutableListOf<Step>()
+    private lateinit var stepsAdapter: StepsAdapter
+
+    private var recipeId: Long = -1L
+    private lateinit var dbHelper: RecipeDatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_steps)
+
+        rvSteps = findViewById(R.id.rvSteps)
+        fabAddStep = findViewById(R.id.fabAddStep)
+        etStepDescription = findViewById(R.id.etStepDescription)
+        etStepTimer = findViewById(R.id.etStepTimer)
+
+        dbHelper = RecipeDatabaseHelper(this)
+
+        // Recupera l'ID della ricetta dall'extra
+        recipeId = intent.getLongExtra("RECIPE_ID", -1L)
+        if (recipeId == -1L) {
+            Toast.makeText(this, "Recipe ID not found.", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+
+        stepsAdapter = StepsAdapter(stepsList)
+        rvSteps.layoutManager = LinearLayoutManager(this)
+        rvSteps.adapter = stepsAdapter
+
+        fabAddStep.setOnClickListener {
+            addStep()
+        }
+    }
+
+    private fun addStep() {
+        val description = etStepDescription.text?.toString()?.trim().orEmpty()
+        val timer = etStepTimer.text?.toString()?.trim().orEmpty()
+
+        if (description.isEmpty() || timer.isEmpty()) {
+            Toast.makeText(this, "Please enter both description and timer.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val step = Step(description = description, timer = timer)
+        val rowId = dbHelper.insertStep(recipeId, step)
+        if (rowId == -1L) {
+            Toast.makeText(this, "Error saving step.", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Step added.", Toast.LENGTH_SHORT).show()
+            stepsList.add(step)
+            stepsAdapter.notifyItemInserted(stepsList.size - 1)
+            etStepDescription.text?.clear()
+            etStepTimer.text?.clear()
+        }
     }
 }

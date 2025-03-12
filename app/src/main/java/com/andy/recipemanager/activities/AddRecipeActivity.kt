@@ -1,6 +1,5 @@
 package com.andy.recipemanager.activities
 
-
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -26,10 +25,10 @@ class AddRecipeActivity : AppCompatActivity() {
     private lateinit var etDifficulty: TextInputEditText
     private lateinit var etDescription: TextInputEditText
 
-    // Inizializza con una icona di default
+    // Icona di default
     private var selectedIconResId: Int = R.drawable.ic_recipe_temp
 
-    // Launcher per ricevere il risultato da IconsListActivity
+    // Launcher per IconsListActivity
     private lateinit var chooseIconLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +45,6 @@ class AddRecipeActivity : AppCompatActivity() {
         etDifficulty = findViewById(R.id.etDifficulty)
         etDescription = findViewById(R.id.etDescription)
 
-        // Registra il launcher per ricevere il risultato dalla IconsListActivity
         chooseIconLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
@@ -56,7 +54,6 @@ class AddRecipeActivity : AppCompatActivity() {
                     val iconId = data.getIntExtra("ICON_RES_ID", -1)
                     if (iconId != -1) {
                         selectedIconResId = iconId
-                        // Aggiorna l'immagine dell'ImageButton per mostrare l'icona scelta
                         ibRecipeIcon.setImageResource(iconId)
                     } else {
                         Toast.makeText(this, "Icon not found.", Toast.LENGTH_SHORT).show()
@@ -78,7 +75,6 @@ class AddRecipeActivity : AppCompatActivity() {
             saveRecipeToDatabase()
         }
 
-        // Avvia IconsListActivity per scegliere l'icona
         ibRecipeIcon.setOnClickListener {
             val intent = Intent(this, IconsListActivity::class.java)
             chooseIconLauncher.launch(intent)
@@ -96,21 +92,17 @@ class AddRecipeActivity : AppCompatActivity() {
             return
         }
 
-        val recipe = Recipe(
-            name = title,
-            time = time,
-            difficulty = difficulty,
-            iconResId = selectedIconResId,
-            description = description
-        )
-
+        val recipe = Recipe(name = title, time = time, difficulty = difficulty, iconResId = selectedIconResId, description = description)
         val dbHelper = RecipeDatabaseHelper(this)
         val rowId = dbHelper.insertRecipe(recipe)
         if (rowId == -1L) {
             Toast.makeText(this, "Error saving recipe.", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Recipe saved (ID: $rowId).", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, AddStepsActivity::class.java))
+            // Passa l'ID della ricetta a AddStepsActivity
+            val intent = Intent(this, AddStepsActivity::class.java)
+            intent.putExtra("RECIPE_ID", rowId)
+            startActivity(intent)
         }
     }
 }
