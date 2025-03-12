@@ -1,10 +1,13 @@
 package com.andy.recipemanager.activities
 
+
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.andy.recipemanager.R
 import com.andy.recipemanager.data.Recipe
@@ -12,10 +15,6 @@ import com.andy.recipemanager.data.RecipeDatabaseHelper
 import com.google.android.material.textfield.TextInputEditText
 
 class AddRecipeActivity : AppCompatActivity() {
-
-    companion object {
-        private const val REQUEST_CODE_CHOOSE_ICON = 100
-    }
 
     private lateinit var homeButton: ImageButton
     private lateinit var forwardButton: ImageButton
@@ -27,26 +26,45 @@ class AddRecipeActivity : AppCompatActivity() {
     private lateinit var etDifficulty: TextInputEditText
     private lateinit var etDescription: TextInputEditText
 
-    // ID di default (puoi mettere una tua icona di default)
+    // Inizializza con una icona di default
     private var selectedIconResId: Int = R.drawable.ic_recipe_temp
+
+    // Launcher per ricevere il risultato da IconsListActivity
+    private lateinit var chooseIconLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_recipe)
 
-        // Riferimenti ai pulsanti
         homeButton = findViewById(R.id.homeButton)
         forwardButton = findViewById(R.id.forwardButton)
         settingsButton = findViewById(R.id.settingsButton)
         ibRecipeIcon = findViewById(R.id.ibRecipeIcon)
 
-        // Riferimenti ai campi di testo
         etTitle = findViewById(R.id.etTitle)
         etTime = findViewById(R.id.etTime)
         etDifficulty = findViewById(R.id.etDifficulty)
         etDescription = findViewById(R.id.etDescription)
 
-        // Listener pulsanti
+        // Registra il launcher per ricevere il risultato dalla IconsListActivity
+        chooseIconLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                if (data != null && data.hasExtra("ICON_RES_ID")) {
+                    val iconId = data.getIntExtra("ICON_RES_ID", -1)
+                    if (iconId != -1) {
+                        selectedIconResId = iconId
+                        // Aggiorna l'immagine dell'ImageButton per mostrare l'icona scelta
+                        ibRecipeIcon.setImageResource(iconId)
+                    } else {
+                        Toast.makeText(this, "Icon not found.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
         homeButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
@@ -56,15 +74,14 @@ class AddRecipeActivity : AppCompatActivity() {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
 
-        // Quando l'utente preme il pulsante Avanti (forward), salviamo la ricetta
         forwardButton.setOnClickListener {
             saveRecipeToDatabase()
         }
 
-        // Clic sull'icona: apri la schermata delle icone
+        // Avvia IconsListActivity per scegliere l'icona
         ibRecipeIcon.setOnClickListener {
             val intent = Intent(this, IconsListActivity::class.java)
-            startActivityForResult(intent, REQUEST_CODE_CHOOSE_ICON)
+            chooseIconLauncher.launch(intent)
         }
     }
 
@@ -74,13 +91,11 @@ class AddRecipeActivity : AppCompatActivity() {
         val difficulty = etDifficulty.text?.toString()?.trim().orEmpty()
         val description = etDescription.text?.toString()?.trim().orEmpty()
 
-        // Controllo minimo: il titolo non deve essere vuoto
         if (title.isEmpty()) {
             Toast.makeText(this, "Please enter a recipe title", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Crea il Recipe
         val recipe = Recipe(
             name = title,
             time = time,
@@ -89,29 +104,13 @@ class AddRecipeActivity : AppCompatActivity() {
             description = description
         )
 
-        // Inserisci nel DB
         val dbHelper = RecipeDatabaseHelper(this)
         val rowId = dbHelper.insertRecipe(recipe)
         if (rowId == -1L) {
             Toast.makeText(this, "Error saving recipe.", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Recipe saved (ID: $rowId).", Toast.LENGTH_SHORT).show()
-            // Prosegui, ad esempio, alla AddStepsActivity
             startActivity(Intent(this, AddStepsActivity::class.java))
-        }
-    }
-
-    // Ricevi l'icona selezionata dalla IconsListActivity
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == REQUEST_CODE_CHOOSE_ICON && resultCode == Activity.RESULT_OK) {
-            val chosenIcon = data?.getIntExtra("ICON_RES_ID", -1) ?: -1
-            if (chosenIcon != -1) {
-                selectedIconResId = chosenIcon
-                // Aggiorna l'icona sul pulsante per mostrare immediatamente la scelta
-                ibRecipeIcon.setImageResource(chosenIcon)
-            }
         }
     }
 }

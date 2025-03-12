@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:foreground="?attr/selectableItemBackgroundBorderless"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:layout_margin="4dp">
 
     <ImageView
         android:id="@+id/iconImage"

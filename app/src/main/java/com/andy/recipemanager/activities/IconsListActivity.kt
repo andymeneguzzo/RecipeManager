@@ -17,7 +17,6 @@ class IconsListActivity : AppCompatActivity() {
 
         val iconGridView = findViewById<GridView>(R.id.iconGridView)
 
-        // Lista di icone (resource ID)
         val iconsList = listOf(
             R.drawable.ic_pasta,
             R.drawable.ic_burger,
@@ -26,21 +25,19 @@ class IconsListActivity : AppCompatActivity() {
             R.drawable.ic_pesce,
             R.drawable.ic_sushi,
             R.drawable.ic_veggie,
-            R.drawable.ic_dolci,
+            R.drawable.ic_dolci
         )
 
         val adapter = IconAdapter(this, iconsList)
         iconGridView.adapter = adapter
 
-        // Quando l'utente clicca su un'icona, restituiamo l'icona alla AddRecipeActivity
         iconGridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val clickedIconResId = iconsList[position]
-
             Toast.makeText(this, "Icon $clickedIconResId selected!", Toast.LENGTH_SHORT).show()
 
-            val resultIntent = Intent()
-            // Passiamo indietro l'ID della risorsa dell'icona selezionata
-            resultIntent.putExtra("ICON_RES_ID", clickedIconResId)
+            val resultIntent = Intent().apply {
+                putExtra("ICON_RES_ID", clickedIconResId)
+            }
             setResult(RESULT_OK, resultIntent)
             finish()
         }
