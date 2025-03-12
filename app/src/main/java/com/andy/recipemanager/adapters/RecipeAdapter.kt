@@ -77,9 +77,17 @@ class RecipeAdapter(private val recipes: MutableList<Recipe>)
                     }
                     R.id.action_modify_steps -> {
                         val context = view.context
-                        val intent = Intent(context, EditStepsActivity::class.java)
-                        intent.putExtra("RECIPE_ID", recipe.id)
-                        context.startActivity(intent)
+                        val dbHelper = RecipeDatabaseHelper(context)
+                        val steps = dbHelper.getStepsForRecipe(recipe.id)
+                        if (steps.isNotEmpty()) {
+                            // Passa l'ID del primo step per esempio
+                            val intent = Intent(context, EditStepsActivity::class.java)
+                            intent.putExtra("STEP_ID", steps.first().id)
+                            intent.putExtra("RECIPE_ID", recipe.id)
+                            context.startActivity(intent)
+                        } else {
+                            Toast.makeText(context, "No steps available for editing.", Toast.LENGTH_SHORT).show()
+                        }
                         true
                     }
                     else -> false

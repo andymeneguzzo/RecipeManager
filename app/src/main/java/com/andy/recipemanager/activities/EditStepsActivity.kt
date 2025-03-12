@@ -36,6 +36,7 @@ class EditStepsActivity : AppCompatActivity() {
         fabSaveEdits = findViewById(R.id.fabSaveEdits)
 
         dbHelper = RecipeDatabaseHelper(this)
+
         recipeId = intent.getLongExtra("RECIPE_ID", -1L)
         stepId = intent.getLongExtra("STEP_ID", -1L)
         if (recipeId == -1L || stepId == -1L) {

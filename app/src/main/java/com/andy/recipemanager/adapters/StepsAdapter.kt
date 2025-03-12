@@ -50,7 +50,6 @@ class StepsAdapter(
         popupMenu.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_modify_step -> {
-                    // Lancia EditStepsActivity passando STEP_ID e RECIPE_ID
                     val context = anchorView.context
                     val intent = Intent(context, EditStepsActivity::class.java)
                     intent.putExtra("STEP_ID", step.id)

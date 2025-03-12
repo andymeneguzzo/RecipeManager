@@ -76,7 +76,9 @@ class AddStepsActivity : AppCompatActivity() {
             Toast.makeText(this, "Error saving step.", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Step added.", Toast.LENGTH_SHORT).show()
-            stepsList.add(step)
+            // Crea un nuovo oggetto Step con l'id corretto
+            val savedStep = step.copy(id = rowId)
+            stepsList.add(savedStep)
             stepsAdapter.notifyItemInserted(stepsList.size - 1)
             etStepDescription.text?.clear()
             etStepTimer.text?.clear()
