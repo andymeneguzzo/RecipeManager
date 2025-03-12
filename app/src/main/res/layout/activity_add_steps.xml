@@ -25,7 +25,14 @@
         android:id="@+id/finishButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/finish"/>
+        android:text="@string/finish"
+        android:textSize="20sp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"
+        android:textColor="?attr/colorSecondary"/>
+
 
     <!-- RECYCLER VIEW PER LA LISTA DEGLI STEP -->
     <androidx.recyclerview.widget.RecyclerView

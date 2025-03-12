@@ -1,6 +1,9 @@
 package com.andy.recipemanager.activities
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +21,7 @@ class AddStepsActivity : AppCompatActivity() {
     private lateinit var fabAddStep: FloatingActionButton
     private lateinit var etStepDescription: TextInputEditText
     private lateinit var etStepTimer: TextInputEditText
+    private lateinit var finishButton: TextView
 
     private val stepsList = mutableListOf<Step>()
     private lateinit var stepsAdapter: StepsAdapter
@@ -33,6 +37,7 @@ class AddStepsActivity : AppCompatActivity() {
         fabAddStep = findViewById(R.id.fabAddStep)
         etStepDescription = findViewById(R.id.etStepDescription)
         etStepTimer = findViewById(R.id.etStepTimer)
+        finishButton = findViewById(R.id.finishButton)  // Nuovo riferimento
 
         dbHelper = RecipeDatabaseHelper(this)
 
@@ -49,6 +54,10 @@ class AddStepsActivity : AppCompatActivity() {
 
         fabAddStep.setOnClickListener {
             addStep()
+        }
+
+        finishButton.setOnClickListener {
+            finishSteps()
         }
     }
 
@@ -72,5 +81,13 @@ class AddStepsActivity : AppCompatActivity() {
             etStepDescription.text?.clear()
             etStepTimer.text?.clear()
         }
+    }
+
+    private fun finishSteps() {
+        Toast.makeText(this, "Recipe completed.", Toast.LENGTH_SHORT).show()
+        // Impostiamo il risultato per segnalare a MainActivity che la ricetta è completa
+        setResult(Activity.RESULT_OK)
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }

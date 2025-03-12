@@ -14,6 +14,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andy.recipemanager.R
+import com.andy.recipemanager.data.Recipe
+import com.andy.recipemanager.data.RecipeDatabaseHelper
+import com.andy.recipemanager.adapters.RecipeAdapter
 import com.andy.recipemanager.drawer_activities.BurgerListActivity
 import com.andy.recipemanager.drawer_activities.DessertListActivity
 import com.andy.recipemanager.drawer_activities.FishListActivity
@@ -36,25 +39,43 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var addButton: ImageButton
     private lateinit var settingsButton: ImageButton
 
+    // Altri riferimenti
+    private lateinit var searchButton: ImageButton
+    private lateinit var searchBar: EditText
+    private lateinit var topBar: LinearLayout
+
+    private lateinit var recipeListRecyclerView: RecyclerView
+    private lateinit var recipeAdapter: RecipeAdapter
+    private val recipes = mutableListOf<Recipe>()
+    private lateinit var dbHelper: RecipeDatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)  // Usa il tuo layout con il DrawerLayout
+        setContentView(R.layout.activity_main)
 
-        // Se in futuro desideri mostrare una lista di ricette reali,
-        // puoi recuperarle dal DB e collegarle a un RecyclerView qui.
-        // Per ora, non carichiamo alcun adapter né ricette di esempio.
-
-        // --- RIFERIMENTI AI PULSANTI E VIEW ---
         hamburgerButton = findViewById(R.id.hamburgerButton)
         userButton = findViewById(R.id.userButton)
         addButton = findViewById(R.id.addButton)
         settingsButton = findViewById(R.id.settingsButton)
+        searchButton = findViewById(R.id.searchButton)
+        searchBar = findViewById(R.id.searchBar)
+        topBar = findViewById(R.id.clickableTopBar)
 
-        val searchButton = findViewById<ImageButton>(R.id.searchButton)
-        val searchBar = findViewById<EditText>(R.id.searchBar)
-        val topBar = findViewById<LinearLayout>(R.id.clickableTopBar)
+        // Imposta il DrawerLayout e NavigationView
+        drawerLayout = findViewById(R.id.drawerLayout)
+        navigationView = findViewById(R.id.navigationView)
+        navigationView.setNavigationItemSelectedListener(this)
+        navigationView.itemIconTintList = null
 
-        // --- LISTENER PULSANTI ---
+        // Imposta RecyclerView per la lista delle ricette
+        recipeListRecyclerView = findViewById(R.id.recipeList)
+        recipeListRecyclerView.layoutManager = LinearLayoutManager(this)
+        recipeAdapter = RecipeAdapter(recipes)
+        recipeListRecyclerView.adapter = recipeAdapter
+
+        // Inizializza il database helper
+        dbHelper = RecipeDatabaseHelper(this)
+
         addButton.setOnClickListener {
             val intent = Intent(this, AddRecipeActivity::class.java)
             startActivity(intent)
@@ -71,20 +92,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         searchButton.setOnClickListener {
-            // Mostra o nascondi la barra di ricerca con un'animazione
             if (searchBar.isGone) {
                 searchBar.visibility = View.VISIBLE
                 searchBar.pivotX = 0f
                 searchBar.scaleX = 0f
-
-                searchBar.animate()
-                    .scaleX(1f)
-                    .setDuration(250)
-                    .start()
+                searchBar.animate().scaleX(1f).setDuration(250).start()
             } else {
-                searchBar.animate()
-                    .scaleX(0f)
-                    .setDuration(250)
+                searchBar.animate().scaleX(0f).setDuration(250)
                     .withEndAction { searchBar.visibility = View.GONE }
                     .start()
             }
@@ -97,63 +111,55 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             finish()
         }
 
-        // --- GESTIONE DRAWER ---
-        drawerLayout = findViewById(R.id.drawerLayout)
-        navigationView = findViewById(R.id.navigationView)
-
-        // Imposta il listener per la NavigationView
-        navigationView.setNavigationItemSelectedListener(this)
-        navigationView.itemIconTintList = null
-
-        // Al click del bottone hamburger, apri il cassetto laterale
         hamburgerButton.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
     }
 
-    // Gestione dei click sulle voci del menu a scomparsa
+    override fun onResume() {
+        super.onResume()
+        refreshRecipeList()
+    }
+
+    private fun refreshRecipeList() {
+        recipes.clear()
+        recipes.addAll(dbHelper.getAllRecipes())
+        recipeAdapter.notifyDataSetChanged()
+    }
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+        // Gestione delle voci del menu laterale...
         when (menuItem.itemId) {
             R.id.nav_pasta -> {
-                val intent = Intent(this, PastaListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, PastaListActivity::class.java))
             }
             R.id.nav_carne -> {
-                val intent = Intent(this, MeatListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, MeatListActivity::class.java))
             }
             R.id.nav_pesce -> {
-                val intent = Intent(this, FishListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, FishListActivity::class.java))
             }
             R.id.nav_dolci -> {
-                val intent = Intent(this, DessertListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, DessertListActivity::class.java))
             }
             R.id.nav_burger -> {
-                val intent = Intent(this, BurgerListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, BurgerListActivity::class.java))
             }
             R.id.nav_pizza -> {
-                val intent = Intent(this, PizzaListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, PizzaListActivity::class.java))
             }
             R.id.nav_sushi -> {
-                val intent = Intent(this, SushiListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, SushiListActivity::class.java))
             }
             R.id.nav_veggie -> {
-                val intent = Intent(this, VeggieListActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, VeggieListActivity::class.java))
             }
         }
-        // Chiudi il drawer dopo il click
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    // Se l'utente preme il tasto "indietro" mentre il cassetto è aperto, chiudi il drawer
-    @Deprecated("This method has been deprecated in favor of using the {@link OnBackPressedDispatcher}.")
+    @Deprecated("This method has been deprecated in favor of using OnBackPressedDispatcher.")
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)

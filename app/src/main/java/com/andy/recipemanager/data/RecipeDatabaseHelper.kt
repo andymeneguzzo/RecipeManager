@@ -91,6 +91,26 @@ class RecipeDatabaseHelper(context: Context) :
         return recipe
     }
 
+    fun getAllRecipes(): List<Recipe> {
+        val recipes = mutableListOf<Recipe>()
+        val db = this.readableDatabase
+        val cursor = db.query(
+            RecipeContract.RecipeEntry.TABLE_NAME,
+            null, null, null, null, null, null
+        )
+        while (cursor.moveToNext()) {
+            val name = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_NAME))
+            val time = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_TIME))
+            val difficulty = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_DIFFICULTY))
+            val iconResId = cursor.getInt(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_ICON_RES_ID))
+            val description = cursor.getString(cursor.getColumnIndexOrThrow(RecipeContract.RecipeEntry.COLUMN_DESCRIPTION))
+            recipes.add(Recipe(name, time, difficulty, iconResId, description))
+        }
+        cursor.close()
+        return recipes
+    }
+
+
     fun insertStep(recipeId: Long, step: Step): Long {
         val db = this.writableDatabase
         val values = ContentValues().apply {
