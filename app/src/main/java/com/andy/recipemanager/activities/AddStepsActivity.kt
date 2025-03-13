@@ -86,10 +86,13 @@ class AddStepsActivity : BaseActivity() {
         }
     }
 
+    // Avoid creating multiple instances of main activity
     private fun finishSteps() {
         Toast.makeText(this, "Recipe completed.", Toast.LENGTH_SHORT).show()
         setResult(Activity.RESULT_OK)
-        startActivity(Intent(this, MainActivity::class.java))
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        startActivity(intent)
         finish()
     }
 }

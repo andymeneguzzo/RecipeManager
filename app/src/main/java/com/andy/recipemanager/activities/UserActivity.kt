@@ -13,11 +13,16 @@ class UserActivity : BaseActivity() {
         setContentView(R.layout.activity_user)
 
         val btnHome = findViewById<ImageButton>(R.id.homeButton)
+        val settingsButton = findViewById<ImageButton>(R.id.settingsButton)
 
         btnHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        settingsButton.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
 
 
