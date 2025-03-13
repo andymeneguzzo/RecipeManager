@@ -1,6 +1,7 @@
 package com.andy.recipemanager.activities
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
@@ -88,6 +89,7 @@ class AddStepsActivity : BaseActivity() {
     private fun finishSteps() {
         Toast.makeText(this, "Recipe completed.", Toast.LENGTH_SHORT).show()
         setResult(Activity.RESULT_OK)
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
