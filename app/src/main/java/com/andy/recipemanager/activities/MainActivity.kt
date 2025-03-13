@@ -27,7 +27,7 @@ import com.andy.recipemanager.drawer_activities.SushiListActivity
 import com.andy.recipemanager.drawer_activities.VeggieListActivity
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     // Drawer e NavigationView
     private lateinit var drawerLayout: DrawerLayout

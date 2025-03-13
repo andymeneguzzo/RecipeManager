@@ -14,7 +14,7 @@ import com.andy.recipemanager.data.Step
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 
-class EditStepsActivity : AppCompatActivity() {
+class EditStepsActivity : BaseActivity() {
 
     private lateinit var rvSteps: RecyclerView
     private lateinit var etEditStep: TextInputEditText

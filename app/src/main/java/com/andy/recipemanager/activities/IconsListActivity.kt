@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.andy.recipemanager.R
 import com.andy.recipemanager.adapters.IconAdapter
 
-class IconsListActivity : AppCompatActivity() {
+class IconsListActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

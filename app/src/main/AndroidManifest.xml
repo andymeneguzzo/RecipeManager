@@ -18,6 +18,8 @@
         android:theme="@style/Theme.RecipeManager"
         tools:targetApi="33">
 
+        <receiver android:name=".NotificationReceiver" />
+
         <!-- LAUNCHER -->
         <activity
             android:name=".activities.MainActivity"

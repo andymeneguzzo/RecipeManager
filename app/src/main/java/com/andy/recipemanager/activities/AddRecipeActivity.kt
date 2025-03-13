@@ -8,12 +8,13 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import com.andy.recipemanager.R
 import com.andy.recipemanager.data.Recipe
 import com.andy.recipemanager.data.RecipeDatabaseHelper
 import com.google.android.material.textfield.TextInputEditText
 
-class AddRecipeActivity : AppCompatActivity() {
+class AddRecipeActivity : BaseActivity() {
 
     private lateinit var homeButton: ImageButton
     private lateinit var forwardButton: ImageButton

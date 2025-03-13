@@ -21,4 +21,19 @@
         <item name="android:textColorPrimary">#434343</item>
         <item name="android:editTextColor">#434343</item>
     </style>
+
+    <!-- Tema Dark (non un nero assoluto, ma una versione leggermente oscurata) -->
+    <style name="Theme.RecipeManager.Dark" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#D49A08</item> <!-- leggermente più scuro di #FAB10D -->
+        <item name="colorPrimaryContainer">#D4A200</item> <!-- dark di #FFD54F -->
+        <item name="colorOnPrimary">#1B1B1B</item>
+        <item name="colorSecondary">#D67C00</item>
+        <item name="colorSecondaryContainer">#D67C00</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:colorBackground">#ECE5D8</item> <!-- dark di #FDF3E3 -->
+        <item name="colorSurface">#ECE5D8</item>
+        <item name="colorOnSurface">#1B1B1B</item>
+        <item name="android:textColorPrimary">#1B1B1B</item>
+        <item name="android:editTextColor">#1B1B1B</item>
+    </style>
 </resources>

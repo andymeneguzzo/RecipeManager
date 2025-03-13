@@ -8,7 +8,7 @@ import androidx.core.net.toUri
 import com.andy.recipemanager.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class GreetingsActivity : AppCompatActivity() {
+class GreetingsActivity : BaseActivity() {
 
     private lateinit var fabHome: FloatingActionButton
     private lateinit var imgButtonGithub: ImageButton
