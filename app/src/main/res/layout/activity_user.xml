@@ -117,25 +117,6 @@
                     android:maxLines="3"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- GENERE con dropdown -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="@string/gender"
-                app:endIconMode="dropdown_menu">
-
-                <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                    android:id="@+id/etGender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/baloo_chettan"
-                    android:padding="16dp"
-                    android:entries="@array/gender_options"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
