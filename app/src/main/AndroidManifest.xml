@@ -39,7 +39,6 @@
         <activity android:name=".activities.EditStepsActivity"/>
         <activity android:name=".activities.SettingsActivity"/>
         <activity android:name=".activities.IconsListActivity"/>
-
         <activity android:name=".activities.ViewStepsActivity"/>
         <activity android:name=".activities.ViewInfoActivity"/>
 
