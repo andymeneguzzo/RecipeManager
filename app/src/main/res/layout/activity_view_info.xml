@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activities.ViewInfoActivity">
 
+    <!-- Titolo della ricetta in alto a sinistra -->
+    <TextView
+        android:id="@+id/tvRecipeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Recipe Title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Icona della ricetta -->
+    <ImageView
+        android:id="@+id/ivRecipeIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_recipe_temp"
+        app:layout_constraintTop_toBottomOf="@id/tvRecipeTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Tempo -->
+    <TextView
+        android:id="@+id/tvRecipeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time: 30 min"
+        app:layout_constraintTop_toTopOf="@id/ivRecipeIcon"
+        app:layout_constraintStart_toEndOf="@id/ivRecipeIcon"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Difficoltà -->
+    <TextView
+        android:id="@+id/tvRecipeDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty: Easy"
+        app:layout_constraintTop_toBottomOf="@id/tvRecipeTime"
+        app:layout_constraintStart_toEndOf="@id/ivRecipeIcon"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Descrizione -->
+    <TextView
+        android:id="@+id/tvRecipeDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Recipe description goes here."
+        app:layout_constraintTop_toBottomOf="@id/ivRecipeIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- BOTTOM BAR -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomBarCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/home"
+                android:src="@drawable/ic_home"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:maxHeight="32dp"
+                android:maxWidth="32dp"
+                android:elevation="0dp"
+                app:tint="?attr/colorOnPrimary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="64dp"/>
+
+            <ImageButton
+                android:id="@+id/forwardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/forward"
+                android:src="@drawable/ic_arrow"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:maxHeight="32dp"
+                android:maxWidth="32dp"
+                android:elevation="0dp"
+                app:tint="?attr/colorOnPrimary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+
+                android:layout_marginEnd="64dp"/>
+
+            <ImageButton
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/settings"
+                android:src="@drawable/ic_settings"
+
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:maxHeight="32dp"
+                android:maxWidth="32dp"
+                android:elevation="0dp"
+                app:tint="?attr/colorOnPrimary"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
