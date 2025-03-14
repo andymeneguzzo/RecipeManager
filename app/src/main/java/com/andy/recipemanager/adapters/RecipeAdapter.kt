@@ -15,6 +15,7 @@ import com.andy.recipemanager.data.Recipe
 import com.andy.recipemanager.data.RecipeDatabaseHelper
 import com.andy.recipemanager.activities.EditRecipeActivity
 import com.andy.recipemanager.activities.EditStepsActivity
+import com.andy.recipemanager.activities.ViewInfoActivity
 
 class RecipeAdapter(private val recipes: MutableList<Recipe>)
     : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
@@ -40,6 +41,14 @@ class RecipeAdapter(private val recipes: MutableList<Recipe>)
         holder.tvRecipeTime.text = recipe.time
         holder.tvRecipeDifficulty.text = recipe.difficulty
         holder.ivRecipeImage.setImageResource(recipe.iconResId)
+
+        // Aggiungi un click listener sull'intero item per aprire ViewInfoActivity
+        holder.itemView.setOnClickListener { view ->
+            val context = view.context
+            val intent = Intent(context, ViewInfoActivity::class.java)
+            intent.putExtra("RECIPE_ID", recipe.id)
+            context.startActivity(intent)
+        }
 
         holder.btnMore.setOnClickListener { view ->
             val popupMenu = PopupMenu(view.context, view)

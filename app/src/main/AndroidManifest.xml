@@ -40,6 +40,9 @@
         <activity android:name=".activities.SettingsActivity"/>
         <activity android:name=".activities.IconsListActivity"/>
 
+        <activity android:name=".activities.ViewStepsActivity"/>
+        <activity android:name=".activities.ViewInfoActivity"/>
+
         <!-- DRAWER LIST ACTIVITY -->
         <activity android:name=".drawer_activities.BurgerListActivity"/>
         <activity android:name=".drawer_activities.DessertListActivity"/>

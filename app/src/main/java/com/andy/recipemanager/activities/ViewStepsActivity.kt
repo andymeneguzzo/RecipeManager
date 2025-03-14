@@ -3,6 +3,7 @@ package com.andy.recipemanager.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +14,7 @@ import com.andy.recipemanager.data.Step
 class ViewStepsActivity : BaseActivity() {
 
     private lateinit var rvSteps: RecyclerView
-    private lateinit var finishButton: Button
+    private lateinit var finishButton: TextView
 
     private var recipeId: Long = -1L
     private lateinit var dbHelper: RecipeDatabaseHelper
