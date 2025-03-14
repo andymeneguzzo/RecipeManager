@@ -7,8 +7,6 @@ package com.andy.recipemanager.activities
  *
  * */
 
-
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -35,6 +33,10 @@ import com.andy.recipemanager.drawer_activities.SushiListActivity
 import com.andy.recipemanager.drawer_activities.VeggieListActivity
 import com.google.android.material.navigation.NavigationView
 
+/**
+ * MainActivity class that handles the main screen of the Recipe Manager app.
+ * It includes navigation drawer, search functionality, and recipe list display.
+ */
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     // Drawer e NavigationView
@@ -57,6 +59,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     private val recipes = mutableListOf<Recipe>()
     private lateinit var dbHelper: RecipeDatabaseHelper
 
+    /**
+     * Called when the activity is first created.
+     * Initializes the UI components and sets up event listeners.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -124,17 +130,29 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
+    /**
+     * Called when the activity is resumed.
+     * Refreshes the recipe list.
+     */
     override fun onResume() {
         super.onResume()
         refreshRecipeList()
     }
 
+    /**
+     * Refreshes the recipe list by fetching data from the database.
+     */
     private fun refreshRecipeList() {
         recipes.clear()
         recipes.addAll(dbHelper.getAllRecipes())
         recipeAdapter.notifyDataSetChanged()
     }
 
+    /**
+     * Handles navigation item selection in the drawer menu.
+     * @param menuItem The selected menu item.
+     * @return Boolean indicating whether the item selection was handled.
+     */
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         // Gestione delle voci del menu laterale...
         when (menuItem.itemId) {
@@ -167,6 +185,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         return true
     }
 
+    /**
+     * Handles the back button press.
+     * Closes the drawer if it is open, otherwise calls the superclass method.
+     */
     @Deprecated("This method has been deprecated in favor of using OnBackPressedDispatcher.")
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
